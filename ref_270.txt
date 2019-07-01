@@ -1,0 +1,1 @@
+set journal adaptive group writes
