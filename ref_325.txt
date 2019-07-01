@@ -1,0 +1,1 @@
+do complete and close log segment

@@ -1,0 +1,1 @@
+get alert publish events by policy id

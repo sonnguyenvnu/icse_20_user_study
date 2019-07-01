@@ -1,0 +1,1 @@
+delete ledger left from previous allocation if necessary

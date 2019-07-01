@@ -1,0 +1,1 @@
+get writable ledger dirs for new log

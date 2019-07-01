@@ -1,0 +1,1 @@
+get byte array value
