@@ -1,0 +1,1 @@
+set num of alert bolt
