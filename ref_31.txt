@@ -1,0 +1,1 @@
+decode dir path from cookie
