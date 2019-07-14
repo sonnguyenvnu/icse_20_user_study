@@ -1,0 +1,7 @@
+/** 
+ * ????????????
+ */
+public RxGalleryFinalApi open(){
+  rxGalleryFinal.openGallery();
+  return mRxApi;
+}

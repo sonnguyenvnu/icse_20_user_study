@@ -1,0 +1,7 @@
+/** 
+ * ??????,????????
+ * @return
+ */
+public Set<Map.Entry<String,TermFrequency>> getUniGram(){
+  return trieSingle.entrySet();
+}

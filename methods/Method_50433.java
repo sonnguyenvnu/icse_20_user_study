@@ -1,0 +1,3 @@
+private static String buildMysql(final String tableName){
+  return "CREATE TABLE IF NOT EXISTS `" + tableName + "` (" + "  `trans_id` varchar(64) NOT NULL," + "  `target_class` varchar(256) ," + "  `target_method` varchar(128) ," + "  `confirm_method` varchar(128) ," + "  `cancel_method` varchar(128) ," + "  `retried_count` tinyint NOT NULL," + "  `create_time` datetime NOT NULL," + "  `last_time` datetime NOT NULL," + "  `version` tinyint NOT NULL," + "  `status` tinyint NOT NULL," + "  `invocation` longblob," + "  `role` tinyint NOT NULL," + "  `pattern` tinyint," + "  PRIMARY KEY (`trans_id`))";
+}

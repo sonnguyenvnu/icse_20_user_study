@@ -1,0 +1,4 @@
+private void startInputProducer(Consumer<EncodedImage> consumerOfPartialDiskCacheProducer,ProducerContext producerContext,CacheKey partialImageCacheKey,@Nullable EncodedImage partialResultFromCache){
+  Consumer<EncodedImage> consumer=new PartialDiskCacheConsumer(consumerOfPartialDiskCacheProducer,mDefaultBufferedDiskCache,partialImageCacheKey,mPooledByteBufferFactory,mByteArrayPool,partialResultFromCache);
+  mInputProducer.produceResults(consumer,producerContext);
+}

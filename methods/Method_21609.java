@@ -1,0 +1,8 @@
+private void findOrderBy(MySqlSelectQueryBlock query,Select select) throws SqlParseException {
+  SQLOrderBy orderBy=query.getOrderBy();
+  if (orderBy == null) {
+    return;
+  }
+  List<SQLSelectOrderByItem> items=orderBy.getItems();
+  addOrderByToSelect(select,items,null);
+}

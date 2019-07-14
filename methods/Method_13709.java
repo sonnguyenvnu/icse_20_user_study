@@ -1,0 +1,5 @@
+@Bean public RocketMQMessageChannelBinder rocketMessageChannelBinder(RocketMQTopicProvisioner provisioningProvider,InstrumentationManager instrumentationManager){
+  RocketMQMessageChannelBinder binder=new RocketMQMessageChannelBinder(provisioningProvider,extendedBindingProperties,rocketBinderConfigurationProperties,rocketMQProperties,instrumentationManager);
+  binder.setExtendedBindingProperties(extendedBindingProperties);
+  return binder;
+}

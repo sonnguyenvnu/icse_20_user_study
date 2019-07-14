@@ -1,0 +1,9 @@
+/** 
+ * ????????????????????
+ * @param permissionId ??id {@link Permission#getId()}
+ * @param actions      ????? {@link Permission#getActions()} ????,????action,???permissionId
+ * @return ??????
+ */
+default boolean hasPermission(String permissionId,String... actions){
+  return getPermission(permissionId).filter(permission -> actions.length == 0 || permission.getActions().containsAll(Arrays.asList(actions))).isPresent();
+}

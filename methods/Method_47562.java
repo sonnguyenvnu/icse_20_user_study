@@ -1,0 +1,3 @@
+public void onChange(){
+  refreshAdapter();
+}

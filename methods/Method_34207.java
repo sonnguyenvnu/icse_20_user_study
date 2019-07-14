@@ -1,0 +1,3 @@
+public AuthorizationRequest checkForPreApproval(AuthorizationRequest authorizationRequest,Authentication userAuthentication){
+  return authorizationRequest;
+}

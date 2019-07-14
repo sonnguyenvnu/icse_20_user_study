@@ -1,0 +1,3 @@
+@NonNull private static String mergeContent(@NonNull Context context,@NonNull String source,boolean dark){
+  return "<html>\n" + "\n" + "<head>\n" + "    <meta charset=\"UTF-8\">\n" + "    <meta name=\"viewport\" content=\"width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;\"/>" + "    <link rel=\"stylesheet\" type=\"text/css\" href=\"" + getStyle(dark) + "\">\n" + "\n" + getCodeStyle(context,dark) + "\n" + "    <script src=\"./intercept-hash.js\"></script>\n" + "</head>\n" + "\n" + "<body>\n" + source + "\n<script src=\"./intercept-touch.js\"></script>\n" + "</body>\n" + "\n" + "</html>\n";
+}

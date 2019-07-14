@@ -1,0 +1,3 @@
+private static HystrixThreadPoolConfiguration sampleThreadPoolConfiguration(HystrixThreadPoolKey threadPoolKey,HystrixThreadPoolProperties threadPoolProperties){
+  return HystrixThreadPoolConfiguration.sample(threadPoolKey,threadPoolProperties);
+}

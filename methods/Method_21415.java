@@ -1,0 +1,71 @@
+public DruidDataSourceStatValue getStatValueAndReset(){
+  DruidDataSourceStatValue value=new DruidDataSourceStatValue();
+  lock.lock();
+  try {
+    value.setPoolingCount(this.poolingCount);
+    value.setPoolingPeak(this.poolingPeak);
+    value.setPoolingPeakTime(this.poolingPeakTime);
+    value.setActiveCount(this.activeCount);
+    value.setActivePeak(this.activePeak);
+    value.setActivePeakTime(this.activePeakTime);
+    value.setConnectCount(this.connectCount);
+    value.setCloseCount(this.closeCount);
+    value.setWaitThreadCount(lock.getWaitQueueLength(notEmpty));
+    value.setNotEmptyWaitCount(this.notEmptyWaitCount);
+    value.setNotEmptyWaitNanos(this.notEmptyWaitNanos);
+    value.setKeepAliveCheckCount(this.keepAliveCheckCount);
+    this.poolingPeak=0;
+    this.poolingPeakTime=0;
+    this.activePeak=0;
+    this.activePeakTime=0;
+    this.connectCount=0;
+    this.closeCount=0;
+    this.keepAliveCheckCount=0;
+    this.notEmptyWaitCount=0;
+    this.notEmptyWaitNanos=0;
+  }
+  finally {
+    lock.unlock();
+  }
+  value.setName(this.getName());
+  value.setDbType(this.dbType);
+  value.setDriverClassName(this.getDriverClassName());
+  value.setUrl(this.getUrl());
+  value.setUserName(this.getUsername());
+  value.setFilterClassNames(this.getFilterClassNames());
+  value.setInitialSize(this.getInitialSize());
+  value.setMinIdle(this.getMinIdle());
+  value.setMaxActive(this.getMaxActive());
+  value.setQueryTimeout(this.getQueryTimeout());
+  value.setTransactionQueryTimeout(this.getTransactionQueryTimeout());
+  value.setLoginTimeout(this.getLoginTimeout());
+  value.setValidConnectionCheckerClassName(this.getValidConnectionCheckerClassName());
+  value.setExceptionSorterClassName(this.getExceptionSorterClassName());
+  value.setTestOnBorrow(this.testOnBorrow);
+  value.setTestOnReturn(this.testOnReturn);
+  value.setTestWhileIdle(this.testWhileIdle);
+  value.setDefaultAutoCommit(this.isDefaultAutoCommit());
+  if (defaultReadOnly != null) {
+    value.setDefaultReadOnly(defaultReadOnly);
+  }
+  value.setDefaultTransactionIsolation(this.getDefaultTransactionIsolation());
+  value.setLogicConnectErrorCount(connectErrorCountUpdater.getAndSet(this,0));
+  value.setPhysicalConnectCount(createCountUpdater.getAndSet(this,0));
+  value.setPhysicalCloseCount(destroyCountUpdater.getAndSet(this,0));
+  value.setPhysicalConnectErrorCount(createErrorCountUpdater.getAndSet(this,0));
+  value.setExecuteCount(this.getAndResetExecuteCount());
+  value.setErrorCount(errorCountUpdater.getAndSet(this,0));
+  value.setCommitCount(commitCountUpdater.getAndSet(this,0));
+  value.setRollbackCount(rollbackCountUpdater.getAndSet(this,0));
+  value.setPstmtCacheHitCount(cachedPreparedStatementHitCountUpdater.getAndSet(this,0));
+  value.setPstmtCacheMissCount(cachedPreparedStatementMissCountUpdater.getAndSet(this,0));
+  value.setStartTransactionCount(startTransactionCountUpdater.getAndSet(this,0));
+  value.setTransactionHistogram(this.getTransactionHistogram().toArrayAndReset());
+  value.setConnectionHoldTimeHistogram(this.getDataSourceStat().getConnectionHoldHistogram().toArrayAndReset());
+  value.setRemoveAbandoned(this.isRemoveAbandoned());
+  value.setClobOpenCount(this.getDataSourceStat().getClobOpenCountAndReset());
+  value.setBlobOpenCount(this.getDataSourceStat().getBlobOpenCountAndReset());
+  value.setSqlSkipCount(this.getDataSourceStat().getSkipSqlCountAndReset());
+  value.setSqlList(this.getDataSourceStat().getSqlStatMapAndReset());
+  return value;
+}

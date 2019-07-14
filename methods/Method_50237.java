@@ -1,0 +1,6 @@
+/** 
+ * ???????sd? -- ??????
+ */
+public static void setImgSaveRxSDCard(String name){
+  MediaGridFragment.setImageStoreDir(name);
+}

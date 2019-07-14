@@ -1,0 +1,7 @@
+/** 
+ * ?????Activity???????????)
+ */
+public static Activity currentActivity(){
+  Activity activity=activityStack.lastElement();
+  return activity;
+}

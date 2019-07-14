@@ -1,0 +1,3 @@
+public void setDelegate(GroupCreateFinalActivityDelegate groupCreateFinalActivityDelegate){
+  delegate=groupCreateFinalActivityDelegate;
+}

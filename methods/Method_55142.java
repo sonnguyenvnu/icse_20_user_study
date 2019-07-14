@@ -1,0 +1,17 @@
+/** 
+ * Loads and links a dynamic library or bundle. <p>This function examines the Mach-O file specified by path. If the image is compatible with the current process and has not already been loaded into the process, the image is loaded and linked. If the image contains initializer functions, they are executed before this function returns.</p> <p>Subsequent calls to  {@code dlopen} to load the same image return the same handle, but the internal reference count for the handle is incremented.Therefore, all  {@code dlopen} calls must be balanced with {@link #dlclose} calls.</p><p>For efficiency, the  {@link #RTLD_LAZY} binding mode is preferred over {@link #RTLD_NOW}. However, using  {@link #RTLD_NOW} ensures that any undefinedsymbols are discovered during the call to  {@code dlopen}.</p> <p>The dynamic loader looks in the paths specified by a set of environment variables, and in the process's current directory, when it searches for a library. These paths are called dynamic loader search paths. The environment variables are  {@code LD_LIBRARY_PATH},  {@code DYLD_LIBRARY_PATH}, and {@code DYLD_FALLBACK_LIBRARY_PATH}. The default value of  {@code DYLD_FALLBACK_LIBRARY_PATH} (used when this variable is not set), is{@code $HOME/lib;/usr/local/lib;/usr/lib}.</p> <p>The order in which the search paths are searched depends on whether path is a filename (it does not contain a slash) or a pathname (it contains at least one slash).</p> <p>When path is a filename, the dynamic loader searches for the library in the search paths in the following order:</p> <ul> <li>$LD_LIBRARY_PATH</li> <li>$DYLD_LIBRARY_PATH</li> <li>The process's working directory</li> <li>$DYLD_FALLBACK_LIBRARY_PATH</li> </ul> <p>When path is a pathname, the dynamic loader searches for the library in the search paths in the following order:</p> <ul> <li>$DYLD_LIBRARY_PATH</li> <li>The given pathname</li> <li>$DYLD_FALLBACK_LIBRARY_PATH using the filename</li> </ul>
+ * @param path path to the image to open
+ * @param mode specifies when the loaded image's external symbols are bound to their definitions in dependent libraries (lazy or at load time) and the visibilityof the image's exported symbols (global or local). The value of this parameter is made up by ORing one binding behavior value with one visibility specification value. <p>The following values specify the binding behavior:</p> <ul> <li> {@link #RTLD_LAZY} (default): Each external symbol reference is bound the first time it's used.</li><li> {@link #RTLD_NOW}: All external symbol references are bound immediately.</li> </ul> <p>The following values specify external symbol visibility:</p> <ul> <li> {@link #RTLD_GLOBAL} (default): The loaded image's exported symbols are available to any images that use a flat namespace or to calls todlsym when using a special handle (see  {@link #dlsym} for details).</li><li> {@link #RTLD_LOCAL}: The loaded image's exported symbols are generally hidden. They are available only to  {@link #dlsym} invocations thatuse the handle returned by this function.</li> </ul>
+ */
+@NativeType("void *") public static long dlopen(@Nullable @NativeType("char const *") CharSequence path,int mode){
+  MemoryStack stack=stackGet();
+  int stackPointer=stack.getPointer();
+  try {
+    stack.nASCIISafe(path,true);
+    long pathEncoded=path == null ? NULL : stack.getPointerAddress();
+    return ndlopen(pathEncoded,mode);
+  }
+  finally {
+    stack.setPointer(stackPointer);
+  }
+}

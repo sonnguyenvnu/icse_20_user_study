@@ -1,0 +1,3 @@
+public static <T extends AnimationBackend>AnimationBackendDelegate<T> createForBackend(T backend,InactivityListener inactivityListener,MonotonicClock monotonicClock,ScheduledExecutorService scheduledExecutorServiceForUiThread){
+  return new AnimationBackendDelegateWithInactivityCheck<>(backend,inactivityListener,monotonicClock,scheduledExecutorServiceForUiThread);
+}

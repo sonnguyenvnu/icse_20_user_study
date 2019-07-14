@@ -1,0 +1,10 @@
+/** 
+ * Add a number of milliseconds to the date. The implementation of this method differs from the  {@link #add(long)} method in that aDateTimeField performs the addition.
+ * @param millis  the milliseconds to add
+ * @throws IllegalArgumentException if the value is invalid
+ */
+public void addMillis(final int millis){
+  if (millis != 0) {
+    setMillis(getChronology().millis().add(getMillis(),millis));
+  }
+}

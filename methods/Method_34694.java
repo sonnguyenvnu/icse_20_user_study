@@ -1,0 +1,3 @@
+private static HystrixProperty<ExecutionIsolationStrategy> getProperty(final String propertyPrefix,final HystrixCommandKey key,final String instanceProperty,final ExecutionIsolationStrategy builderOverrideValue,final ExecutionIsolationStrategy defaultValue){
+  return new ExecutionIsolationStrategyHystrixProperty(builderOverrideValue,key,propertyPrefix,defaultValue,instanceProperty);
+}

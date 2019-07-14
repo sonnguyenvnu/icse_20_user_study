@@ -1,0 +1,12 @@
+/** 
+ * Converts this fileName into a file, adjusting relative paths if necessary to make them relative to the pom.
+ * @param fileName The name of the file, relative or absolute.
+ * @return The resulting file.
+ */
+private File toFile(String fileName){
+  File file=new File(fileName);
+  if (file.isAbsolute()) {
+    return file;
+  }
+  return new File(getProject().getProjectDir(),fileName);
+}

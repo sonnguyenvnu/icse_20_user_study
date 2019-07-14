@@ -1,0 +1,3 @@
+public ResizeAndRotateProducer newResizeAndRotateProducer(Producer<EncodedImage> inputProducer,final boolean isResizingEnabled,ImageTranscoderFactory imageTranscoderFactory){
+  return new ResizeAndRotateProducer(mExecutorSupplier.forBackgroundTasks(),mPooledByteBufferFactory,inputProducer,isResizingEnabled,imageTranscoderFactory);
+}

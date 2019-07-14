@@ -1,0 +1,3 @@
+private static MethodSpec transferService(String implClass,String serviceInstanceName){
+  return MethodSpec.methodBuilder("transferService").addAnnotation(Override.class).returns(TypeName.VOID).addModifiers(Modifier.PROTECTED).addParameter(ParameterSpec.builder(SectionClassNames.SECTION_CONTEXT,"c").build()).addParameter(ParameterSpec.builder(SectionClassNames.SECTION,"previous").build()).addParameter(ParameterSpec.builder(SectionClassNames.SECTION,"next").build()).addStatement("$L $L = ($L) previous",implClass,"previousSection",implClass).addStatement("$L $L = ($L) next",implClass,"nextSection",implClass).addStatement("nextSection.$L = previousSection.$L",serviceInstanceName,serviceInstanceName).build();
+}

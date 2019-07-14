@@ -1,0 +1,3 @@
+RestMethodMetadata getFeignMethodMetadata(){
+  return feignMethodMetadata;
+}

@@ -1,0 +1,3 @@
+Nullness visitUnsignedRightShift(){
+  return visitNumericalOperation();
+}

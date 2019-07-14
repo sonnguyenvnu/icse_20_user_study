@@ -1,0 +1,3 @@
+Nullness visitLambdaResultExpression(){
+  return NULLABLE;
+}

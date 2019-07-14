@@ -1,0 +1,19 @@
+/** 
+ * ???????????
+ * @param providerGroup ??????
+ */
+protected void checkProviderInfo(ProviderGroup providerGroup){
+  List<ProviderInfo> providerInfos=providerGroup == null ? null : providerGroup.getProviderInfos();
+  if (CommonUtils.isEmpty(providerInfos)) {
+    return;
+  }
+  Iterator<ProviderInfo> iterator=providerInfos.iterator();
+  while (iterator.hasNext()) {
+    ProviderInfo providerInfo=iterator.next();
+    if (!StringUtils.equals(providerInfo.getProtocolType(),consumerConfig.getProtocol())) {
+      if (LOGGER.isWarnEnabled(consumerConfig.getAppName())) {
+        LOGGER.warnWithApp(consumerConfig.getAppName(),"Unmatched protocol between consumer [{}] and provider [{}].",consumerConfig.getProtocol(),providerInfo.getProtocolType());
+      }
+    }
+  }
+}

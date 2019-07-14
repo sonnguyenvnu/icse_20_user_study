@@ -1,0 +1,79 @@
+/*
+ * Copyright 2017-2019 CodingApi .
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.codingapi.txlcn.common.util;
+
+import com.sun.org.apache.regexp.internal.RE;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
+import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.util.StringUtils;
+
+import java.util.Objects;
+
+/**
+ * Description:
+ * Date: 19-1-24 ä¸‹å?ˆ1:44
+ *
+ * @author ujued
+ */
+public class ApplicationInformation {
+
+    /**
+     * æ¨¡å?—æ ‡è¯†
+     *
+     * @param environment      Spring Env
+     * @param serverProperties serverProperties
+     * @return æ ‡è¯†
+     */
+    public static String modId(ConfigurableEnvironment environment, ServerProperties serverProperties) {
+
+        String applicationName = environment.getProperty("spring.application.name");
+        applicationName = StringUtils.hasText(applicationName) ? applicationName : "application";
+        return applicationName + ":" + serverPort(serverProperties);
+    }
+
+    /**
+     * æ‹†åˆ†ç½‘ç»œåœ°å?€ä¸ºhost and port
+     *
+     * @param hostAndPort ä¸»æœºå’Œç«¯å?£
+     * @return ä¸»æœºç«¯å?£æ•°ç»„
+     */
+    public static String[] splitAddress(String hostAndPort) {
+        if (hostAndPort.indexOf(':') == -1) {
+            throw new IllegalStateException("non exists port");
+        }
+        String[] result = hostAndPort.split(":");
+        if (StringUtils.isEmpty(result[0])) {
+            result[0] = "0.0.0.0";
+            return result;
+        }
+        if (result[0].charAt(0) == '/') {
+            result[0] = result[0].substring(1);
+            return result;
+        }
+        return result;
+    }
+
+    /**
+     * æ¨¡å?—HTTPç«¯å?£å?·
+     *
+     * @param serverProperties serverProperties
+     * @return int
+     */
+    public static int serverPort(ServerProperties serverProperties) {
+        return Objects.isNull(serverProperties) ? 0 : (Objects.isNull(serverProperties.getPort()) ? 8080 :
+                serverProperties.getPort());
+    }
+}

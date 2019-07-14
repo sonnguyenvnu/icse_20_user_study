@@ -1,0 +1,3 @@
+public static Builder fromDelegateMethodDescription(DelegateMethodDescription methodDescription){
+  return new Builder().annotations(methodDescription.annotations).accessType(methodDescription.accessType).returnType(methodDescription.returnType).name(methodDescription.name).definedParameterTypes(methodDescription.definedParameterTypes).optionalParameters(methodDescription.optionalParameters).optionalParameterTypes(methodDescription.optionalParameterTypes).interStageInputAnnotations(methodDescription.interStageInputAnnotations).extraMethods(methodDescription.extraMethods).exceptions(methodDescription.exceptions);
+}

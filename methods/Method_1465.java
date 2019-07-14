@@ -1,0 +1,3 @@
+public BitmapPrepareProducer newBitmapPrepareProducer(Producer<CloseableReference<CloseableImage>> inputProducer){
+  return new BitmapPrepareProducer(inputProducer,mBitmapPrepareToDrawMinSizeBytes,mBitmapPrepareToDrawMaxSizeBytes,mBitmapPrepareToDrawForPrefetch);
+}

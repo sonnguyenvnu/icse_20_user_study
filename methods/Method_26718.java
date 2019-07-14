@@ -1,0 +1,3 @@
+Object readResolve(){
+  return INSTANCE;
+}

@@ -1,0 +1,158 @@
+public static void applyChatTheme(boolean fontsOnly){
+  if (chat_msgTextPaint == null) {
+    return;
+  }
+  if (chat_msgInDrawable != null && !fontsOnly) {
+    chat_gamePaint.setColor(getColor(key_chat_previewGameText));
+    chat_durationPaint.setColor(getColor(key_chat_previewDurationText));
+    chat_botButtonPaint.setColor(getColor(key_chat_botButtonText));
+    chat_urlPaint.setColor(getColor(key_chat_linkSelectBackground));
+    chat_botProgressPaint.setColor(getColor(key_chat_botProgress));
+    chat_deleteProgressPaint.setColor(getColor(key_chat_secretTimeText));
+    chat_textSearchSelectionPaint.setColor(getColor(key_chat_textSelectBackground));
+    chat_msgErrorPaint.setColor(getColor(key_chat_sentError));
+    chat_statusPaint.setColor(getColor(key_chat_status));
+    chat_statusRecordPaint.setColor(getColor(key_chat_status));
+    chat_actionTextPaint.setColor(getColor(key_chat_serviceText));
+    chat_actionTextPaint.linkColor=getColor(key_chat_serviceLink);
+    chat_contextResult_titleTextPaint.setColor(getColor(key_windowBackgroundWhiteBlackText));
+    chat_composeBackgroundPaint.setColor(getColor(key_chat_messagePanelBackground));
+    chat_timeBackgroundPaint.setColor(getColor(key_chat_mediaTimeBackground));
+    setDrawableColorByKey(chat_msgNoSoundDrawable,key_chat_mediaTimeText);
+    setDrawableColorByKey(chat_msgInDrawable,key_chat_inBubble);
+    setDrawableColorByKey(chat_msgInSelectedDrawable,key_chat_inBubbleSelected);
+    setDrawableColorByKey(chat_msgInShadowDrawable,key_chat_inBubbleShadow);
+    setDrawableColorByKey(chat_msgOutDrawable,key_chat_outBubble);
+    setDrawableColorByKey(chat_msgOutSelectedDrawable,key_chat_outBubbleSelected);
+    setDrawableColorByKey(chat_msgOutShadowDrawable,key_chat_outBubbleShadow);
+    setDrawableColorByKey(chat_msgInMediaDrawable,key_chat_inBubble);
+    setDrawableColorByKey(chat_msgInMediaSelectedDrawable,key_chat_inBubbleSelected);
+    setDrawableColorByKey(chat_msgInMediaShadowDrawable,key_chat_inBubbleShadow);
+    setDrawableColorByKey(chat_msgOutMediaDrawable,key_chat_outBubble);
+    setDrawableColorByKey(chat_msgOutMediaSelectedDrawable,key_chat_outBubbleSelected);
+    setDrawableColorByKey(chat_msgOutMediaShadowDrawable,key_chat_outBubbleShadow);
+    setDrawableColorByKey(chat_msgOutCheckDrawable,key_chat_outSentCheck);
+    setDrawableColorByKey(chat_msgOutCheckSelectedDrawable,key_chat_outSentCheckSelected);
+    setDrawableColorByKey(chat_msgOutHalfCheckDrawable,key_chat_outSentCheck);
+    setDrawableColorByKey(chat_msgOutHalfCheckSelectedDrawable,key_chat_outSentCheckSelected);
+    setDrawableColorByKey(chat_msgOutClockDrawable,key_chat_outSentClock);
+    setDrawableColorByKey(chat_msgOutSelectedClockDrawable,key_chat_outSentClockSelected);
+    setDrawableColorByKey(chat_msgInClockDrawable,key_chat_inSentClock);
+    setDrawableColorByKey(chat_msgInSelectedClockDrawable,key_chat_inSentClockSelected);
+    setDrawableColorByKey(chat_msgMediaCheckDrawable,key_chat_mediaSentCheck);
+    setDrawableColorByKey(chat_msgMediaHalfCheckDrawable,key_chat_mediaSentCheck);
+    setDrawableColorByKey(chat_msgMediaClockDrawable,key_chat_mediaSentClock);
+    setDrawableColorByKey(chat_msgStickerCheckDrawable,key_chat_serviceText);
+    setDrawableColorByKey(chat_msgStickerHalfCheckDrawable,key_chat_serviceText);
+    setDrawableColorByKey(chat_msgStickerClockDrawable,key_chat_serviceText);
+    setDrawableColorByKey(chat_msgStickerViewsDrawable,key_chat_serviceText);
+    setDrawableColorByKey(chat_shareIconDrawable,key_chat_serviceIcon);
+    setDrawableColorByKey(chat_replyIconDrawable,key_chat_serviceIcon);
+    setDrawableColorByKey(chat_goIconDrawable,key_chat_serviceIcon);
+    setDrawableColorByKey(chat_botInlineDrawable,key_chat_serviceIcon);
+    setDrawableColorByKey(chat_botLinkDrawalbe,key_chat_serviceIcon);
+    setDrawableColorByKey(chat_msgInViewsDrawable,key_chat_inViews);
+    setDrawableColorByKey(chat_msgInViewsSelectedDrawable,key_chat_inViewsSelected);
+    setDrawableColorByKey(chat_msgOutViewsDrawable,key_chat_outViews);
+    setDrawableColorByKey(chat_msgOutViewsSelectedDrawable,key_chat_outViewsSelected);
+    setDrawableColorByKey(chat_msgMediaViewsDrawable,key_chat_mediaViews);
+    setDrawableColorByKey(chat_msgInMenuDrawable,key_chat_inMenu);
+    setDrawableColorByKey(chat_msgInMenuSelectedDrawable,key_chat_inMenuSelected);
+    setDrawableColorByKey(chat_msgOutMenuDrawable,key_chat_outMenu);
+    setDrawableColorByKey(chat_msgOutMenuSelectedDrawable,key_chat_outMenuSelected);
+    setDrawableColorByKey(chat_msgMediaMenuDrawable,key_chat_mediaMenu);
+    setDrawableColorByKey(chat_msgOutInstantDrawable,key_chat_outInstant);
+    setDrawableColorByKey(chat_msgInInstantDrawable,key_chat_inInstant);
+    setDrawableColorByKey(chat_msgErrorDrawable,key_chat_sentErrorIcon);
+    setDrawableColorByKey(chat_muteIconDrawable,key_chat_muteIcon);
+    setDrawableColorByKey(chat_lockIconDrawable,key_chat_lockIcon);
+    setDrawableColorByKey(chat_msgBroadcastDrawable,key_chat_outBroadcast);
+    setDrawableColorByKey(chat_msgBroadcastMediaDrawable,key_chat_mediaBroadcast);
+    setDrawableColorByKey(chat_inlineResultFile,key_chat_inlineResultIcon);
+    setDrawableColorByKey(chat_inlineResultAudio,key_chat_inlineResultIcon);
+    setDrawableColorByKey(chat_inlineResultLocation,key_chat_inlineResultIcon);
+    setDrawableColorByKey(chat_msgInCallDrawable,key_chat_inInstant);
+    setDrawableColorByKey(chat_msgInCallSelectedDrawable,key_chat_inInstantSelected);
+    setDrawableColorByKey(chat_msgOutCallDrawable,key_chat_outInstant);
+    setDrawableColorByKey(chat_msgOutCallSelectedDrawable,key_chat_outInstantSelected);
+    setDrawableColorByKey(chat_msgCallUpGreenDrawable,key_chat_outGreenCall);
+    setDrawableColorByKey(chat_msgCallDownRedDrawable,key_chat_inRedCall);
+    setDrawableColorByKey(chat_msgCallDownGreenDrawable,key_chat_inGreenCall);
+    setDrawableColorByKey(calllog_msgCallUpRedDrawable,key_calls_callReceivedRedIcon);
+    setDrawableColorByKey(calllog_msgCallUpGreenDrawable,key_calls_callReceivedGreenIcon);
+    setDrawableColorByKey(calllog_msgCallDownRedDrawable,key_calls_callReceivedRedIcon);
+    setDrawableColorByKey(calllog_msgCallDownGreenDrawable,key_calls_callReceivedGreenIcon);
+    for (int a=0; a < 2; a++) {
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[a][0],getColor(key_chat_outLoader),false);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[a][0],getColor(key_chat_outMediaIcon),true);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[a][1],getColor(key_chat_outLoaderSelected),false);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[a][1],getColor(key_chat_outMediaIconSelected),true);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[2 + a][0],getColor(key_chat_inLoader),false);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[2 + a][0],getColor(key_chat_inMediaIcon),true);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[2 + a][1],getColor(key_chat_inLoaderSelected),false);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[2 + a][1],getColor(key_chat_inMediaIconSelected),true);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[4 + a][0],getColor(key_chat_mediaLoaderPhoto),false);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[4 + a][0],getColor(key_chat_mediaLoaderPhotoIcon),true);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[4 + a][1],getColor(key_chat_mediaLoaderPhotoSelected),false);
+      setCombinedDrawableColor(chat_fileMiniStatesDrawable[4 + a][1],getColor(key_chat_mediaLoaderPhotoIconSelected),true);
+    }
+    for (int a=0; a < 5; a++) {
+      setCombinedDrawableColor(chat_fileStatesDrawable[a][0],getColor(key_chat_outLoader),false);
+      setCombinedDrawableColor(chat_fileStatesDrawable[a][0],getColor(key_chat_outMediaIcon),true);
+      setCombinedDrawableColor(chat_fileStatesDrawable[a][1],getColor(key_chat_outLoaderSelected),false);
+      setCombinedDrawableColor(chat_fileStatesDrawable[a][1],getColor(key_chat_outMediaIconSelected),true);
+      setCombinedDrawableColor(chat_fileStatesDrawable[5 + a][0],getColor(key_chat_inLoader),false);
+      setCombinedDrawableColor(chat_fileStatesDrawable[5 + a][0],getColor(key_chat_inMediaIcon),true);
+      setCombinedDrawableColor(chat_fileStatesDrawable[5 + a][1],getColor(key_chat_inLoaderSelected),false);
+      setCombinedDrawableColor(chat_fileStatesDrawable[5 + a][1],getColor(key_chat_inMediaIconSelected),true);
+    }
+    for (int a=0; a < 4; a++) {
+      setCombinedDrawableColor(chat_photoStatesDrawables[a][0],getColor(key_chat_mediaLoaderPhoto),false);
+      setCombinedDrawableColor(chat_photoStatesDrawables[a][0],getColor(key_chat_mediaLoaderPhotoIcon),true);
+      setCombinedDrawableColor(chat_photoStatesDrawables[a][1],getColor(key_chat_mediaLoaderPhotoSelected),false);
+      setCombinedDrawableColor(chat_photoStatesDrawables[a][1],getColor(key_chat_mediaLoaderPhotoIconSelected),true);
+    }
+    for (int a=0; a < 2; a++) {
+      setCombinedDrawableColor(chat_photoStatesDrawables[7 + a][0],getColor(key_chat_outLoaderPhoto),false);
+      setCombinedDrawableColor(chat_photoStatesDrawables[7 + a][0],getColor(key_chat_outLoaderPhotoIcon),true);
+      setCombinedDrawableColor(chat_photoStatesDrawables[7 + a][1],getColor(key_chat_outLoaderPhotoSelected),false);
+      setCombinedDrawableColor(chat_photoStatesDrawables[7 + a][1],getColor(key_chat_outLoaderPhotoIconSelected),true);
+      setCombinedDrawableColor(chat_photoStatesDrawables[10 + a][0],getColor(key_chat_inLoaderPhoto),false);
+      setCombinedDrawableColor(chat_photoStatesDrawables[10 + a][0],getColor(key_chat_inLoaderPhotoIcon),true);
+      setCombinedDrawableColor(chat_photoStatesDrawables[10 + a][1],getColor(key_chat_inLoaderPhotoSelected),false);
+      setCombinedDrawableColor(chat_photoStatesDrawables[10 + a][1],getColor(key_chat_inLoaderPhotoIconSelected),true);
+    }
+    setDrawableColorByKey(chat_photoStatesDrawables[9][0],key_chat_outFileIcon);
+    setDrawableColorByKey(chat_photoStatesDrawables[9][1],key_chat_outFileSelectedIcon);
+    setDrawableColorByKey(chat_photoStatesDrawables[12][0],key_chat_inFileIcon);
+    setDrawableColorByKey(chat_photoStatesDrawables[12][1],key_chat_inFileSelectedIcon);
+    setCombinedDrawableColor(chat_contactDrawable[0],getColor(key_chat_inContactBackground),false);
+    setCombinedDrawableColor(chat_contactDrawable[0],getColor(key_chat_inContactIcon),true);
+    setCombinedDrawableColor(chat_contactDrawable[1],getColor(key_chat_outContactBackground),false);
+    setCombinedDrawableColor(chat_contactDrawable[1],getColor(key_chat_outContactIcon),true);
+    setCombinedDrawableColor(chat_locationDrawable[0],getColor(key_chat_inLocationBackground),false);
+    setCombinedDrawableColor(chat_locationDrawable[0],getColor(key_chat_inLocationIcon),true);
+    setCombinedDrawableColor(chat_locationDrawable[1],getColor(key_chat_outLocationBackground),false);
+    setCombinedDrawableColor(chat_locationDrawable[1],getColor(key_chat_outLocationIcon),true);
+    setDrawableColorByKey(chat_composeShadowDrawable,key_chat_messagePanelShadow);
+    setCombinedDrawableColor(chat_attachButtonDrawables[1],getColor(key_chat_attachGalleryBackground),false);
+    setCombinedDrawableColor(chat_attachButtonDrawables[1],getColor(key_chat_attachGalleryIcon),true);
+    setCombinedDrawableColor(chat_attachButtonDrawables[2],getColor(key_chat_attachVideoBackground),false);
+    setCombinedDrawableColor(chat_attachButtonDrawables[2],getColor(key_chat_attachVideoIcon),true);
+    setCombinedDrawableColor(chat_attachButtonDrawables[3],getColor(key_chat_attachAudioBackground),false);
+    setCombinedDrawableColor(chat_attachButtonDrawables[3],getColor(key_chat_attachAudioIcon),true);
+    setCombinedDrawableColor(chat_attachButtonDrawables[4],getColor(key_chat_attachFileBackground),false);
+    setCombinedDrawableColor(chat_attachButtonDrawables[4],getColor(key_chat_attachFileIcon),true);
+    setCombinedDrawableColor(chat_attachButtonDrawables[5],getColor(key_chat_attachContactBackground),false);
+    setCombinedDrawableColor(chat_attachButtonDrawables[5],getColor(key_chat_attachContactIcon),true);
+    setCombinedDrawableColor(chat_attachButtonDrawables[6],getColor(key_chat_attachLocationBackground),false);
+    setCombinedDrawableColor(chat_attachButtonDrawables[6],getColor(key_chat_attachLocationIcon),true);
+    setCombinedDrawableColor(chat_attachButtonDrawables[7],getColor(key_chat_attachHideBackground),false);
+    setCombinedDrawableColor(chat_attachButtonDrawables[7],getColor(key_chat_attachHideIcon),true);
+    setCombinedDrawableColor(chat_attachButtonDrawables[8],getColor(key_chat_attachSendBackground),false);
+    setCombinedDrawableColor(chat_attachButtonDrawables[8],getColor(key_chat_attachSendIcon),true);
+    setCombinedDrawableColor(chat_attachButtonDrawables[9],getColor(key_chat_attachPollBackground),false);
+    setCombinedDrawableColor(chat_attachButtonDrawables[9],getColor(key_chat_attachPollIcon),true);
+    applyChatServiceMessageColor();
+  }
+}

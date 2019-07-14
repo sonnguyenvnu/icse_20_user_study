@@ -1,0 +1,3 @@
+boolean usesWriteQueue(){
+  return expiresAfterWrite();
+}

@@ -1,0 +1,3 @@
+public String placeBittrexLimitOrder(LimitOrder limitOrder) throws IOException {
+  return (OrderType.BID.equals(limitOrder.getType()) ? bittrexAuthenticated.buylimit(apiKey,signatureCreator,exchange.getNonceFactory(),BittrexUtils.toPairString(limitOrder.getCurrencyPair()),limitOrder.getOriginalAmount().toPlainString(),limitOrder.getLimitPrice().toPlainString()) : bittrexAuthenticated.selllimit(apiKey,signatureCreator,exchange.getNonceFactory(),BittrexUtils.toPairString(limitOrder.getCurrencyPair()),limitOrder.getOriginalAmount().toPlainString(),limitOrder.getLimitPrice().toPlainString())).getResult().getUuid();
+}

@@ -1,0 +1,3 @@
+public static HorizontalResult scaleSuccess(){
+  return new HorizontalResult(1,"??????????!");
+}

@@ -1,0 +1,3 @@
+Nullness visitClassDeclaration(){
+  return NULLABLE;
+}

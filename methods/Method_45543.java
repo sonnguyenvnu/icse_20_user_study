@@ -1,0 +1,17 @@
+/** 
+ * ????????????????? ??-1??????????0???????????
+ * @return ?????concurrents boolean
+ */
+@Override public boolean hasConcurrents(){
+  if (concurrents > 0) {
+    return true;
+  }
+  if (CommonUtils.isNotEmpty(methods)) {
+    for (    MethodConfig methodConfig : methods.values()) {
+      if (methodConfig.getConcurrents() != null && methodConfig.getConcurrents() > 0) {
+        return true;
+      }
+    }
+  }
+  return false;
+}

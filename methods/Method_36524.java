@@ -1,0 +1,3 @@
+public static void setSkipJvmReferenceHealthCheck(ClassLoader classLoader,boolean skipJvmReferenceHealthCheck){
+  skipJvmReferenceHealthCheckMap.putIfAbsent(classLoader,skipJvmReferenceHealthCheck);
+}

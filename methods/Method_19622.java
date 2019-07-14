@@ -1,0 +1,3 @@
+@OnCreateLayout static Component onCreateLayout(ComponentContext c,@State ImmutableList<Pair<String,Integer>> items){
+  return Column.create(c).child(Row.create(c).paddingDip(YogaEdge.VERTICAL,10).child(Text.create(c).paddingDip(YogaEdge.RIGHT,10).alignSelf(YogaAlign.CENTER).clickHandler(HorizontalScrollRootComponent.onClick(c,true)).text("PREPEND").textSizeSp(20)).child(Text.create(c).paddingDip(YogaEdge.LEFT,10).alignSelf(YogaAlign.CENTER).clickHandler(HorizontalScrollRootComponent.onClick(c,false)).text("APPEND").textSizeSp(20))).child(HorizontalScroll.create(c).contentProps(createHorizontalScrollChildren(c,items))).build();
+}

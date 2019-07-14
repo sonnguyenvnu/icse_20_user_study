@@ -1,0 +1,7 @@
+/** 
+ * ??????????
+ * @return ????
+ */
+public static Map<String,Object> getDefaultVar(){
+  return new HashMap<>();
+}

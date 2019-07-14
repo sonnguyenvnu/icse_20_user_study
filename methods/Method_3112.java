@@ -1,0 +1,8 @@
+/** 
+ * ?????????
+ * @param term ?
+ * @return ??????
+ */
+public static boolean shouldRemove(Term term){
+  return !shouldInclude(term);
+}

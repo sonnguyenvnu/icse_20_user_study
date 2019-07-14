@@ -1,0 +1,7 @@
+/** 
+ * ???????????????
+ * @return
+ */
+public Collection<Integer> emit(){
+  return this.emits == null ? Collections.<Integer>emptyList() : this.emits;
+}

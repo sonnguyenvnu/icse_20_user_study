@@ -1,0 +1,3 @@
+void allowChanges(){
+  changesAllowed=true;
+}

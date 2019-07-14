@@ -1,0 +1,3 @@
+private static HystrixCommandConfiguration sampleCommandConfiguration(HystrixCommandKey commandKey,HystrixThreadPoolKey threadPoolKey,HystrixCommandGroupKey groupKey,HystrixCommandProperties commandProperties){
+  return HystrixCommandConfiguration.sample(commandKey,threadPoolKey,groupKey,commandProperties);
+}

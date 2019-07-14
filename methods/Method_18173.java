@@ -1,0 +1,4 @@
+@Override public void setSendAccessibilityEventHandler(@Nullable EventHandler<SendAccessibilityEventEvent> sendAccessibilityEventHandler){
+  mPrivateFlags|=PFLAG_SEND_ACCESSIBILITY_EVENT_HANDLER_IS_SET;
+  mSendAccessibilityEventHandler=sendAccessibilityEventHandler;
+}

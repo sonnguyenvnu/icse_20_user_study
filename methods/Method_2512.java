@@ -1,0 +1,7 @@
+/** 
+ * ?????
+ * @return ???
+ */
+byte[] getBuffer(){
+  return _buf;
+}

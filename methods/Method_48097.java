@@ -1,0 +1,5 @@
+private CreateProjectRequest createCodeBuildProjectRequest(final ParallelBuildAction action){
+  log.info("Creating CodeBuild project for " + action.getName());
+  Preconditions.checkArgument(action.getTimeout() <= 480 && action.getTimeout() > 0,"timeoutInMinutes must be greater than zero and less than or equal to 8 hours");
+  return CreateProjectRequest.builder().name(pipelineName + "-" + action.getName()).serviceRole(codeBuildServiceRoleArn).artifacts(ProjectArtifacts.builder().packaging(ArtifactPackaging.NONE).type(ArtifactsType.CODEPIPELINE).name(action.getName() + "-artifacts").build()).timeoutInMinutes(action.getTimeout()).environment(ProjectEnvironment.builder().computeType(action.getComputeType().orElse(defaultComputeType)).image(action.getComputeImage().orElse(defaultComputeImage)).type(EnvironmentType.LINUX_CONTAINER).privilegedMode(action.getPrivilegedMode().orElse(defaultPrivilegedMode)).environmentVariables(action.getEnv().stream().map(e -> EnvironmentVariable.builder().name(e.getName()).value(e.getValue()).build()).collect(Collectors.toList())).build()).source(ProjectSource.builder().type(SourceType.CODEPIPELINE).build()).build();
+}

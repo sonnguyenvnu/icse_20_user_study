@@ -1,0 +1,25 @@
+static public CellChange load(LineNumberReader reader,Pool pool) throws Exception {
+  int row=-1;
+  int cellIndex=-1;
+  Cell oldCell=null;
+  Cell newCell=null;
+  String line;
+  while ((line=reader.readLine()) != null && !"/ec/".equals(line)) {
+    int equal=line.indexOf('=');
+    CharSequence field=line.subSequence(0,equal);
+    String value=line.substring(equal + 1);
+    if ("row".equals(field)) {
+      row=Integer.parseInt(value);
+    }
+ else     if ("cell".equals(field)) {
+      cellIndex=Integer.parseInt(value);
+    }
+ else     if ("new".equals(field) && value.length() > 0) {
+      newCell=Cell.loadStreaming(value,pool);
+    }
+ else     if ("old".equals(field) && value.length() > 0) {
+      oldCell=Cell.loadStreaming(value,pool);
+    }
+  }
+  return new CellChange(row,cellIndex,oldCell,newCell);
+}

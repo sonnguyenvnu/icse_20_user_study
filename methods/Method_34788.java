@@ -1,0 +1,3 @@
+public static HystrixUtilization from(Map<HystrixCommandKey,HystrixCommandUtilization> commandUtilizationMap,Map<HystrixThreadPoolKey,HystrixThreadPoolUtilization> threadPoolUtilizationMap){
+  return new HystrixUtilization(commandUtilizationMap,threadPoolUtilizationMap);
+}

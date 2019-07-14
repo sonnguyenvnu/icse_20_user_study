@@ -1,0 +1,8 @@
+/** 
+ * ?????????.
+ * @param ip ?????IP??
+ * @return ???????
+ */
+public boolean isEnableServer(final String ip){
+  return !ServerStatus.DISABLED.name().equals(jobNodeStorage.getJobNodeData(serverNode.getServerNode(ip)));
+}

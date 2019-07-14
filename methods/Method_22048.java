@@ -1,0 +1,8 @@
+/** 
+ * ????????.
+ * @param jobName ????
+ * @return ??????
+ */
+public CoordinatorRegistryCenter getRegCenter(final String jobName){
+  return regCenterMap.get(jobName);
+}

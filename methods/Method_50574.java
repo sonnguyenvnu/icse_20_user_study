@@ -1,0 +1,11 @@
+/** 
+ * ??drawable???????????? {@link #setShowState(boolean)}?????????????
+ * @param drawableRes ??????id
+ * @return SuperTextView
+ */
+public SuperTextView setDrawable(int drawableRes){
+  this.drawable=getResources().getDrawable(drawableRes).mutate();
+  drawableBackgroundShader=null;
+  postInvalidate();
+  return this;
+}

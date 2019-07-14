@@ -1,0 +1,13 @@
+/** 
+ * ????????label?????????????????
+ * @param label
+ * @return
+ */
+public IWord findFirstWordByLabel(String label){
+  for (  IWord word : this) {
+    if (label.equals(word.getLabel())) {
+      return word;
+    }
+  }
+  return null;
+}

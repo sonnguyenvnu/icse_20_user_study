@@ -1,0 +1,17 @@
+public static void initApplicationContext(ConfigurableApplicationContext applicationContext){
+  ConfigurableListableBeanFactory beanFactory=applicationContext.getBeanFactory();
+  applicationContext.addBeanFactoryPostProcessor(new ServiceBeanFactoryPostProcessor(applicationContext,sofaRuntimeContext,bindingConverterFactory));
+  beanFactory.registerSingleton(SofaRuntimeFrameworkConstants.BINDING_CONVERTER_FACTORY_BEAN_ID,bindingConverterFactory);
+  beanFactory.registerSingleton(SofaRuntimeFrameworkConstants.BINDING_ADAPTER_FACTORY_BEAN_ID,bindingAdapterFactory);
+  beanFactory.registerSingleton(SofaRuntimeFrameworkConstants.SOFA_RUNTIME_CONTEXT_BEAN_ID,sofaRuntimeContext);
+  beanFactory.addBeanPostProcessor(new SofaRuntimeContextAwareProcessor(sofaRuntimeContext));
+  beanFactory.addBeanPostProcessor(new ClientFactoryBeanPostProcessor(sofaRuntimeContext.getClientFactory()));
+  beanFactory.addBeanPostProcessor(new ExtensionClientBeanPostProcessor(new ExtensionClientImpl(sofaRuntimeContext)));
+  beanFactory.addBeanPostProcessor(new ReferenceAnnotationBeanPostProcessor(applicationContext,sofaRuntimeContext,bindingAdapterFactory,bindingConverterFactory));
+  ApplicationShutdownCallbackPostProcessor applicationShutdownCallbackPostProcessor=new ApplicationShutdownCallbackPostProcessor(sofaRuntimeContext.getSofaRuntimeManager());
+  beanFactory.addBeanPostProcessor(applicationShutdownCallbackPostProcessor);
+  beanFactory.registerSingleton(ApplicationShutdownCallbackPostProcessor.class.getCanonicalName(),applicationShutdownCallbackPostProcessor);
+  if (beanFactory instanceof AbstractAutowireCapableBeanFactory) {
+    ((AbstractAutowireCapableBeanFactory)beanFactory).setParameterNameDiscoverer(new SofaParameterNameDiscoverer(applicationContext.getEnvironment()));
+  }
+}

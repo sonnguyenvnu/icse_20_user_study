@@ -1,0 +1,3 @@
+@Bean public AcmContextRefresher acmContextRefresher(AcmIntegrationProperties acmIntegrationProperties,ContextRefresher contextRefresher,AcmRefreshHistory refreshHistory,AcmPropertySourceRepository propertySourceRepository){
+  return new AcmContextRefresher(contextRefresher,acmIntegrationProperties,refreshHistory,propertySourceRepository);
+}

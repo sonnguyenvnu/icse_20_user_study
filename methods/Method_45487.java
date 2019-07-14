@@ -1,0 +1,8 @@
+/** 
+ * ??????Code
+ * @param serializer ??????
+ * @return ?????
+ */
+public static Byte getCodeByAlias(String serializer){
+  return TYPE_CODE_MAP.get(serializer);
+}

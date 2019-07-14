@@ -1,0 +1,3 @@
+@OnCreateLayout static Component onCreateLayout(ComponentContext c,@State boolean left){
+  return Column.create(c).alignItems(left ? YogaAlign.FLEX_START : YogaAlign.FLEX_END).child(Row.create(c).heightDip(40).widthDip(40).backgroundColor(Color.parseColor("#ee1111")).transitionKey("red").build()).child(Row.create(c).heightDip(40).widthDip(40).backgroundColor(Color.parseColor("#1111ee")).transitionKey("blue").build()).child(Row.create(c).heightDip(40).widthDip(40).backgroundColor(Color.parseColor("#11ee11")).transitionKey("green").build()).child(Row.create(c).heightDip(40).widthDip(40).backgroundColor(Color.BLACK).transitionKey("black").build()).clickHandler(LeftRightBlocksComponent.onClick(c)).build();
+}

@@ -1,0 +1,9 @@
+/** 
+ * ???????????????
+ * @param service ?????
+ */
+public static synchronized void unRegisterUserThread(String service){
+  if (userThreadMap != null) {
+    userThreadMap.remove(service);
+  }
+}

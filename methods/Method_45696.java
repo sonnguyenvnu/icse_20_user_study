@@ -1,0 +1,7 @@
+/** 
+ * ???????????
+ * @return StopWatch
+ */
+public int read(){
+  return lastElapsed;
+}

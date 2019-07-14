@@ -1,0 +1,8 @@
+/** 
+ * ??????? TODO ??? ??????
+ * @param time
+ * @return
+ */
+public static long getTimeMillis(String time){
+  return getTimeStamp(time).getTime();
+}

@@ -1,0 +1,3 @@
+public URLStreamHandler getHttpsStreamHandler(ProtectedResourceDetails resourceDetails,OAuthConsumerToken accessToken,OAuthConsumerSupport support,String httpMethod,Map<String,String> additionalParameters){
+  return new OAuthOverHttpsURLStreamHandler(resourceDetails,accessToken,support,httpMethod,additionalParameters);
+}

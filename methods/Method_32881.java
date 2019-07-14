@@ -1,0 +1,30 @@
+static int mapDecSetBitToInternalBit(int decsetBit){
+switch (decsetBit) {
+case 1:
+    return DECSET_BIT_APPLICATION_CURSOR_KEYS;
+case 5:
+  return DECSET_BIT_REVERSE_VIDEO;
+case 6:
+return DECSET_BIT_ORIGIN_MODE;
+case 7:
+return DECSET_BIT_AUTOWRAP;
+case 25:
+return DECSET_BIT_SHOWING_CURSOR;
+case 66:
+return DECSET_BIT_APPLICATION_KEYPAD;
+case 69:
+return DECSET_BIT_LEFTRIGHT_MARGIN_MODE;
+case 1000:
+return DECSET_BIT_MOUSE_TRACKING_PRESS_RELEASE;
+case 1002:
+return DECSET_BIT_MOUSE_TRACKING_BUTTON_EVENT;
+case 1004:
+return DECSET_BIT_SEND_FOCUS_EVENTS;
+case 1006:
+return DECSET_BIT_MOUSE_PROTOCOL_SGR;
+case 2004:
+return DECSET_BIT_BRACKETED_PASTE_MODE;
+default :
+return -1;
+}
+}

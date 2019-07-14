@@ -1,0 +1,4 @@
+public void commandExecutionStarted(HystrixCommandKey commandKey,HystrixThreadPoolKey threadPoolKey,HystrixCommandProperties.ExecutionIsolationStrategy isolationStrategy,int currentConcurrency){
+  HystrixCommandExecutionStarted event=new HystrixCommandExecutionStarted(commandKey,threadPoolKey,isolationStrategy,currentConcurrency);
+  writeOnlyCommandStartSubject.onNext(event);
+}

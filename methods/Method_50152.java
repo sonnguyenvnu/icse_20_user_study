@@ -1,0 +1,3 @@
+GraphQLInterfaceType getRelayNode(){
+  return nodeInterface;
+}

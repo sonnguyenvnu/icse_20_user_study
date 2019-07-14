@@ -1,0 +1,3 @@
+protected void onVisible(){
+  lazyLoad();
+}

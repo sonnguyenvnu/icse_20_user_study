@@ -1,0 +1,3 @@
+@Override public void sendAccessibilityEventUncheckedHandler(@Nullable EventHandler<SendAccessibilityEventUncheckedEvent> sendAccessibilityEventUncheckedHandler){
+  getOrCreateNodeInfo().setSendAccessibilityEventUncheckedHandler(sendAccessibilityEventUncheckedHandler);
+}

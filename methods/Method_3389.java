@@ -1,0 +1,32 @@
+protected int[] extractFeature(String sentence,FeatureMap featureMap,int position){
+  List<Integer> featureVec=new LinkedList<Integer>();
+  char pre2Char=position >= 2 ? sentence.charAt(position - 2) : CHAR_BEGIN;
+  char preChar=position >= 1 ? sentence.charAt(position - 1) : CHAR_BEGIN;
+  char curChar=sentence.charAt(position);
+  char nextChar=position < sentence.length() - 1 ? sentence.charAt(position + 1) : CHAR_END;
+  char next2Char=position < sentence.length() - 2 ? sentence.charAt(position + 2) : CHAR_END;
+  StringBuilder sbFeature=new StringBuilder();
+  sbFeature.delete(0,sbFeature.length());
+  sbFeature.append(preChar).append('1');
+  addFeature(sbFeature,featureVec,featureMap);
+  sbFeature.delete(0,sbFeature.length());
+  sbFeature.append(curChar).append('2');
+  addFeature(sbFeature,featureVec,featureMap);
+  sbFeature.delete(0,sbFeature.length());
+  sbFeature.append(nextChar).append('3');
+  addFeature(sbFeature,featureVec,featureMap);
+  sbFeature.delete(0,sbFeature.length());
+  sbFeature.append(pre2Char).append("/").append(preChar).append('4');
+  addFeature(sbFeature,featureVec,featureMap);
+  sbFeature.delete(0,sbFeature.length());
+  sbFeature.append(preChar).append("/").append(curChar).append('5');
+  addFeature(sbFeature,featureVec,featureMap);
+  sbFeature.delete(0,sbFeature.length());
+  sbFeature.append(curChar).append("/").append(nextChar).append('6');
+  addFeature(sbFeature,featureVec,featureMap);
+  sbFeature.delete(0,sbFeature.length());
+  sbFeature.append(nextChar).append("/").append(next2Char).append('7');
+  addFeature(sbFeature,featureVec,featureMap);
+  sbFeature=null;
+  return toFeatureArray(featureVec);
+}

@@ -1,0 +1,4 @@
+@OnCreateLayout static Component onCreateLayout(ComponentContext c,@Prop String messageText,@Prop String timestamp,@Prop(optional=true) boolean seen,@State Boolean expanded){
+  final boolean isExpanded=expanded == null ? false : expanded;
+  return Column.create(c).paddingDip(YogaEdge.TOP,8).transitionKey(TRANSITION_MSG_PARENT).transitionKeyType(Transition.TransitionKeyType.GLOBAL).clickHandler(ExpandableElementMe.onClick(c)).child(ExpandableElementUtil.maybeCreateTopDetailComponent(c,isExpanded,timestamp)).child(Column.create(c).transitionKey(ExpandableElementUtil.TRANSITION_TEXT_MESSAGE_WITH_BOTTOM).transitionKeyType(Transition.TransitionKeyType.GLOBAL).child(Row.create(c).justifyContent(YogaJustify.FLEX_END).paddingDip(YogaEdge.START,75).paddingDip(YogaEdge.END,5).child(createMessageContent(c,messageText))).child(ExpandableElementUtil.maybeCreateBottomDetailComponent(c,isExpanded,seen))).build();
+}

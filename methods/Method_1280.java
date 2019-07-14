@@ -1,0 +1,3 @@
+@Override protected DataSource<CloseableReference<CloseableImage>> getDataSourceForRequest(DraweeController controller,String controllerId,ImageRequest imageRequest,Object callerContext,AbstractDraweeControllerBuilder.CacheLevel cacheLevel){
+  return mImagePipeline.fetchDecodedImage(imageRequest,callerContext,convertCacheLevelToRequestLevel(cacheLevel),getRequestListener(controller));
+}

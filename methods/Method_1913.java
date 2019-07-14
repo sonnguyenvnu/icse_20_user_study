@@ -1,0 +1,11 @@
+public static BitmapAnimationBackend createColorBitmapAnimationBackend(final int[] colors,final int animationDurationMs,final BitmapFrameCache bitmapFrameCache){
+  final PlatformBitmapFactory platformBitmapFactory=Fresco.getImagePipelineFactory().getPlatformBitmapFactory();
+  final BitmapFrameRenderer bitmapFrameRenderer=new ColorAndFrameNumberRenderer(colors);
+  final AnimationInformation animationInformation=new ColorListAnimationInformation(colors,animationDurationMs);
+  final ExecutorService executorServiceForFramePreparer=new DefaultSerialExecutorService(new DefaultExecutorSupplier(1).forDecode());
+  final BitmapFramePreparationStrategy framePreparationStrategy=new FixedNumberBitmapFramePreparationStrategy(NUMBER_OF_FRAMES_TO_PREPARE);
+  final BitmapFramePreparer bitmapFramePreparer=new DefaultBitmapFramePreparer(platformBitmapFactory,bitmapFrameRenderer,Bitmap.Config.ARGB_8888,executorServiceForFramePreparer);
+  BitmapAnimationBackend bitmapAnimationBackend=new BitmapAnimationBackend(platformBitmapFactory,bitmapFrameCache,animationInformation,bitmapFrameRenderer,framePreparationStrategy,bitmapFramePreparer);
+  bitmapAnimationBackend.setFrameListener(new DebugBitmapAnimationFrameListener());
+  return bitmapAnimationBackend;
+}

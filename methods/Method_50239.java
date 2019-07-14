@@ -1,0 +1,6 @@
+/** 
+ * ???????sd? -- ??????
+ */
+public static void setImgSaveRxCropSDCard(String name){
+  MediaGridFragment.setImageStoreCropDir(name);
+}

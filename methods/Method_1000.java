@@ -1,0 +1,3 @@
+public void setInactivityCheckPollingTimeMs(long inactivityCheckPollingTimeMs){
+  mInactivityCheckPollingTimeMs=inactivityCheckPollingTimeMs;
+}

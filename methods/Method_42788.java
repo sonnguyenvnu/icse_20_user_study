@@ -1,0 +1,11 @@
+/** 
+ * ?????????????
+ * @param str ???????
+ * @param maxLength ????
+ * @param message ????
+ */
+public static void checkStrMaxLength(String str,Integer maxLength,String message){
+  if (str.trim().length() > maxLength) {
+    throw new IllegalArgumentException(message);
+  }
+}

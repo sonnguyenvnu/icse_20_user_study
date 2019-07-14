@@ -1,0 +1,3 @@
+@Bean public SwitcherMethodMatcherPointcutAdvisor switcherMethodMatcherPointcutAdvisor(List<DataSourceSwitchStrategyMatcher> matchers,List<TableSwitchStrategyMatcher> tableSwitcher){
+  return new SwitcherMethodMatcherPointcutAdvisor(matchers,tableSwitcher);
+}

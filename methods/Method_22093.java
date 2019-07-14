@@ -1,0 +1,7 @@
+/** 
+ * ?????????.
+ * @return ???????
+ */
+public boolean isNeedSharding(){
+  return jobNodeStorage.isJobNodeExisted(ShardingNode.NECESSARY);
+}

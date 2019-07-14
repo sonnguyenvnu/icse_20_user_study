@@ -1,0 +1,3 @@
+void release(){
+  mRemovedComponents.clear();
+}

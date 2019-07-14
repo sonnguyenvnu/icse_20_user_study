@@ -1,0 +1,6 @@
+/** 
+ * ???????????????.
+ */
+public void persistOnline(){
+  jobNodeStorage.fillEphemeralJobNode(instanceNode.getLocalInstanceNode(),"");
+}

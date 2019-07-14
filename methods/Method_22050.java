@@ -1,0 +1,8 @@
+/** 
+ * ?????????.
+ * @param jobName ????
+ * @param isRunning ???????
+ */
+public void setJobRunning(final String jobName,final boolean isRunning){
+  jobRunningMap.put(jobName,isRunning);
+}

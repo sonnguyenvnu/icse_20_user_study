@@ -1,0 +1,9 @@
+/** 
+ * ???????? ?????? ---> ?? ???
+ * @param path
+ */
+void addLexemePath(LexemePath path){
+  if (path != null) {
+    this.pathMap.put(path.getPathBegin(),path);
+  }
+}

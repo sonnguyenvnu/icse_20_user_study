@@ -1,0 +1,14 @@
+private AnimationBackend createAnimationBackend(AnimatedImageResult animatedImageResult){
+  AnimatedDrawableBackend animatedDrawableBackend=createAnimatedDrawableBackend(animatedImageResult);
+  BitmapFrameCache bitmapFrameCache=createBitmapFrameCache(animatedImageResult);
+  BitmapFrameRenderer bitmapFrameRenderer=new AnimatedDrawableBackendFrameRenderer(bitmapFrameCache,animatedDrawableBackend);
+  int numberOfFramesToPrefetch=mNumberOfFramesToPrepareSupplier.get();
+  BitmapFramePreparationStrategy bitmapFramePreparationStrategy=null;
+  BitmapFramePreparer bitmapFramePreparer=null;
+  if (numberOfFramesToPrefetch > 0) {
+    bitmapFramePreparationStrategy=new FixedNumberBitmapFramePreparationStrategy(numberOfFramesToPrefetch);
+    bitmapFramePreparer=createBitmapFramePreparer(bitmapFrameRenderer);
+  }
+  BitmapAnimationBackend bitmapAnimationBackend=new BitmapAnimationBackend(mPlatformBitmapFactory,bitmapFrameCache,new AnimatedDrawableBackendAnimationInformation(animatedDrawableBackend),bitmapFrameRenderer,bitmapFramePreparationStrategy,bitmapFramePreparer);
+  return AnimationBackendDelegateWithInactivityCheck.createForBackend(bitmapAnimationBackend,mMonotonicClock,mScheduledExecutorServiceForUiThread);
+}

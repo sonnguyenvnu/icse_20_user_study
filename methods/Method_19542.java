@@ -1,0 +1,4 @@
+@OnCreateLayout public static Component onCrateLayout(ComponentContext c,@State int selectedPage,@State int firstVisibleIndex,@State int movingDirection){
+  final String title=(selectedPage + 1) + "/" + PAGES_COUNT;
+  return Column.create(c).alignItems(YogaAlign.CENTER).justifyContent(YogaJustify.CENTER).child(Text.create(c).textSizeDip(20).text(title)).child(Row.create(c).alignSelf(YogaAlign.STRETCH).justifyContent(YogaJustify.SPACE_BETWEEN).child(Text.create(c).paddingDip(YogaEdge.ALL,12).textSizeDip(20).text("Prev").clickHandler(PageIndicatorsRootComponent.onPrevClick(c))).child(PageIndicators.create(c).size(PAGES_COUNT).selectedIndex(selectedPage).firstVisibleIndex(firstVisibleIndex).movingDirection(movingDirection)).child(Text.create(c).paddingDip(YogaEdge.ALL,12).textSizeDip(20).text("Next").clickHandler(PageIndicatorsRootComponent.onNextClick(c)))).build();
+}

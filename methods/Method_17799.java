@@ -1,0 +1,3 @@
+@Override public void onInitializeAccessibilityEventHandler(@Nullable EventHandler<OnInitializeAccessibilityEventEvent> onInitializeAccessibilityEventHandler){
+  getOrCreateNodeInfo().setOnInitializeAccessibilityEventHandler(onInitializeAccessibilityEventHandler);
+}

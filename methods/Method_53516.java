@@ -1,0 +1,9 @@
+/** 
+ * byte?? ?? 16??char??
+ * @param byteArr     byte??
+ * @param toLowerCase true???????? ?false????????
+ * @return 16??char??
+ */
+public static char[] byteArr2CharArrHex(@NotNull byte[] byteArr,@NotNull boolean toLowerCase){
+  return byteArr2CharArrHex(byteArr,toLowerCase ? DIGITS_LOWER : DIGITS_UPPER);
+}

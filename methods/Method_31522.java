@@ -1,0 +1,3 @@
+@Override public String getRawCreateScript(Table table,boolean baseline){
+  return "CREATE TABLE " + table.getName() + " (\n" + "    installed_rank INT NOT NULL,\n" + "    version VARCHAR(50) NULL,\n" + "    description VARCHAR(200) NOT NULL,\n" + "    type VARCHAR(20) NOT NULL,\n" + "    script VARCHAR(1000) NOT NULL,\n" + "    checksum INT NULL,\n" + "    installed_by VARCHAR(100) NOT NULL,\n" + "    installed_on datetime DEFAULT getDate() NOT NULL,\n" + "    execution_time INT NOT NULL,\n" + "    success decimal NOT NULL,\n" + "    PRIMARY KEY (installed_rank)\n" + ")\n" + "lock datarows on 'default'\n" + (baseline ? getBaselineStatement(table) + "\n" : "") + "go\n" + "CREATE INDEX " + table.getName() + "_s_idx ON " + table.getName() + " (success)\n" + "go\n";
+}

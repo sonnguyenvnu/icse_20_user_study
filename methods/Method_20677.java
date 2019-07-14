@@ -1,0 +1,9 @@
+public void initialize(){
+  createNotificationChannels();
+  this.subscriptions.add(this.notifications.onBackpressureBuffer().filter(PushNotificationEnvelope::isFriendFollow).observeOn(Schedulers.newThread()).subscribe(this::displayNotificationFromFriendFollowActivity));
+  this.subscriptions.add(this.notifications.onBackpressureBuffer().filter(PushNotificationEnvelope::isMessage).flatMap(this::fetchMessageThreadWithEnvelope).filter(ObjectUtils::isNotNull).observeOn(Schedulers.newThread()).subscribe(envelopeAndMessageThread -> this.displayNotificationFromMessageActivity(envelopeAndMessageThread.first,envelopeAndMessageThread.second)));
+  this.subscriptions.add(this.notifications.onBackpressureBuffer().filter(PushNotificationEnvelope::isProjectActivity).observeOn(Schedulers.newThread()).subscribe(this::displayNotificationFromProjectActivity));
+  this.subscriptions.add(this.notifications.onBackpressureBuffer().filter(PushNotificationEnvelope::isProjectReminder).observeOn(Schedulers.newThread()).subscribe(this::displayNotificationFromProjectReminder));
+  this.subscriptions.add(this.notifications.onBackpressureBuffer().filter(PushNotificationEnvelope::isProjectUpdateActivity).flatMap(this::fetchUpdateWithEnvelope).filter(ObjectUtils::isNotNull).observeOn(Schedulers.newThread()).subscribe(envelopeAndUpdate -> this.displayNotificationFromUpdateActivity(envelopeAndUpdate.first,envelopeAndUpdate.second)));
+  this.subscriptions.add(this.notifications.onBackpressureBuffer().filter(PushNotificationEnvelope::isSurvey).flatMap(this::fetchSurveyResponseWithEnvelope).filter(ObjectUtils::isNotNull).observeOn(Schedulers.newThread()).subscribe(envelopeAndSurveyResponse -> this.displayNotificationFromSurveyResponseActivity(envelopeAndSurveyResponse.first,envelopeAndSurveyResponse.second)));
+}

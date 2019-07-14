@@ -1,0 +1,3 @@
+Nullness visitNumericalMultiplication(){
+  return visitNumericalOperation();
+}

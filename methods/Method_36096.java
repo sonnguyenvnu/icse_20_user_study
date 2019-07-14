@@ -1,0 +1,3 @@
+private FaultInjector buildFaultInjector(HttpServletRequest httpServletRequest,HttpServletResponse httpServletResponse){
+  return faultHandlerFactory.buildFaultInjector(httpServletRequest,httpServletResponse);
+}

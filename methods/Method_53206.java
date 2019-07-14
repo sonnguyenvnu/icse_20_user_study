@@ -1,0 +1,3 @@
+int getStackLineHash(){
+  return stackLineHash;
+}

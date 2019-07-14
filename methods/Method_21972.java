@@ -1,0 +1,7 @@
+/** 
+ * ???????IP??.
+ * @return ?????IP??
+ */
+public String getIp(){
+  return jobInstanceId.substring(0,jobInstanceId.indexOf(DELIMITER));
+}

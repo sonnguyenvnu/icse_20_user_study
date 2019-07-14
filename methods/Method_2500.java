@@ -1,0 +1,10 @@
+/** 
+ * ????????????????????????)
+ * @param keyword
+ */
+public void addEmit(int keyword){
+  if (this.emits == null) {
+    this.emits=new TreeSet<Integer>(Collections.reverseOrder());
+  }
+  this.emits.add(keyword);
+}

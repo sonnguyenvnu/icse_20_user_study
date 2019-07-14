@@ -1,0 +1,8 @@
+/** 
+ * repeated bisection ??
+ * @param nclusters ????
+ * @return ???????Set??????
+ */
+public List<Set<K>> repeatedBisection(int nclusters){
+  return repeatedBisection(nclusters,0);
+}

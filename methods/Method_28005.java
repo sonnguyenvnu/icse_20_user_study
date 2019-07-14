@@ -1,0 +1,3 @@
+private void showReload(){
+  hideProgress();
+}

@@ -1,0 +1,3 @@
+@OnCreateChildren protected static <T>Children onCreateChildren(SectionContext c,@State HashSet blacklistState,@Prop List<T> data,@Prop EventHandler<GetUniqueIdentifierEvent> getUniqueIdentifierHandler,@Prop(optional=true) EventHandler<OnCheckIsSameItemEvent> onSameItemEventHandler,@Prop(optional=true) EventHandler<OnCheckIsSameContentEvent> onSameContentEventHandler){
+  return Children.create().child(DataDiffSection.<T>create(c).data(removeBlacklistedItems(c,data,blacklistState,getUniqueIdentifierHandler)).renderEventHandler(HideableDataDiffSection.onRenderEvent(c)).onCheckIsSameContentEventHandler(onSameContentEventHandler).onCheckIsSameItemEventHandler(onSameItemEventHandler)).build();
+}

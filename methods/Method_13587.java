@@ -1,0 +1,8 @@
+/** 
+ * ???????????
+ * @param instances ????
+ * @return ?????
+ */
+public static Instance getHostByRandomWeight2(List<Instance> instances){
+  return getHostByRandomWeight(instances);
+}

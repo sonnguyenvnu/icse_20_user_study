@@ -1,0 +1,3 @@
+Nullness visitNarrowingConversion(){
+  return NULLABLE;
+}

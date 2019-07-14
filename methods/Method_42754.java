@@ -1,0 +1,19 @@
+/** 
+ * ??????
+ * @param newPwd
+ * @param newPwd2
+ * @return
+ */
+private String validatePassword(String newPwd,String newPwd2){
+  String msg="";
+  if (StringUtils.isBlank(newPwd)) {
+    msg+="????????";
+  }
+ else   if (newPwd.length() < 6) {
+    msg+="???????6????";
+  }
+  if (!newPwd.equals(newPwd2)) {
+    msg+="??????????";
+  }
+  return msg;
+}

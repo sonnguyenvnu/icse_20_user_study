@@ -1,0 +1,8 @@
+/** 
+ * ????????Date?? <p>???yyyy-MM-dd HH:mm:ss</p>
+ * @param time ?????
+ * @return Date??
+ */
+public static Date string2Date(String time){
+  return string2Date(time,DEFAULT_SDF);
+}

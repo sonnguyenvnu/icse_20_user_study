@@ -1,0 +1,3 @@
+void onAttachedToRouter(){
+  attachedToRouter=true;
+}

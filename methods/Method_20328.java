@@ -1,0 +1,3 @@
+int getNumInsertions(){
+  return numInsertions;
+}

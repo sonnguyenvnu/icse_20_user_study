@@ -1,0 +1,38 @@
+private void initializeButtons(){
+  SVGGlyph full=new SVGGlyph(0,"FULLSCREEN","M598 214h212v212h-84v-128h-128v-84zM726 726v-128h84v212h-212v-84h128zM214 426v-212h212v84h-128v128h-84zM298 598v128h128v84h-212v-212h84z",Color.WHITE);
+  full.setSize(16,16);
+  SVGGlyph minus=new SVGGlyph(0,"MINUS","M804.571 420.571v109.714q0 22.857-16 38.857t-38.857 16h-694.857q-22.857 0-38.857-16t-16-38.857v-109.714q0-22.857 16-38.857t38.857-16h694.857q22.857 0 38.857 16t16 38.857z",Color.WHITE);
+  minus.setSize(12,2);
+  minus.setTranslateY(4);
+  SVGGlyph resizeMax=new SVGGlyph(0,"RESIZE_MAX","M726 810v-596h-428v596h428zM726 44q34 0 59 25t25 59v768q0 34-25 60t-59 26h-428q-34 0-59-26t-25-60v-768q0-34 25-60t59-26z",Color.WHITE);
+  resizeMax.setSize(12,12);
+  SVGGlyph resizeMin=new SVGGlyph(0,"RESIZE_MIN","M80.842 943.158v-377.264h565.894v377.264h-565.894zM0 404.21v619.79h727.578v-619.79h-727.578zM377.264 161.684h565.894v377.264h-134.736v80.842h215.578v-619.79h-727.578v323.37h80.842v-161.686z",Color.WHITE);
+  resizeMin.setSize(12,12);
+  SVGGlyph close=new SVGGlyph(0,"CLOSE","M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z",Color.WHITE);
+  close.setSize(12,12);
+  btnFull=new JFXButton();
+  btnFull.getStyleClass().add("jfx-decorator-button");
+  btnFull.setCursor(Cursor.HAND);
+  btnFull.setOnAction((action) -> primaryStage.setFullScreen(!primaryStage.isFullScreen()));
+  btnFull.setGraphic(full);
+  btnFull.setTranslateX(-30);
+  btnFull.setRipplerFill(Color.WHITE);
+  btnClose=new JFXButton();
+  btnClose.getStyleClass().add("jfx-decorator-button");
+  btnClose.setCursor(Cursor.HAND);
+  btnClose.setOnAction((action) -> onCloseButtonAction.get().run());
+  btnClose.setGraphic(close);
+  btnClose.setRipplerFill(Color.WHITE);
+  btnMin=new JFXButton();
+  btnMin.getStyleClass().add("jfx-decorator-button");
+  btnMin.setCursor(Cursor.HAND);
+  btnMin.setOnAction((action) -> primaryStage.setIconified(true));
+  btnMin.setGraphic(minus);
+  btnMin.setRipplerFill(Color.WHITE);
+  btnMax=new JFXButton();
+  btnMax.getStyleClass().add("jfx-decorator-button");
+  btnMax.setCursor(Cursor.HAND);
+  btnMax.setRipplerFill(Color.WHITE);
+  btnMax.setOnAction((action) -> maximize(resizeMin,resizeMax));
+  btnMax.setGraphic(resizeMax);
+}

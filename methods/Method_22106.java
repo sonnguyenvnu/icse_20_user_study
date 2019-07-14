@@ -1,0 +1,7 @@
+/** 
+ * ?????????.
+ * @return ???????
+ */
+public String getShardingNodePath(){
+  return String.format("/%s/%s",jobName,SHARDING_NODE);
+}

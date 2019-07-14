@@ -1,0 +1,3 @@
+@Override public boolean removeAll(Collection<?> c){
+  throw new UnsupportedOperationException();
+}

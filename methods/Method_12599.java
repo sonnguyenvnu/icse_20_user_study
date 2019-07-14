@@ -1,0 +1,7 @@
+/** 
+ * ????segmentBuff?????? ????cursor??segmentBuff??this.available - 1
+ * @return
+ */
+boolean isBufferConsumed(){
+  return this.cursor == this.available - 1;
+}

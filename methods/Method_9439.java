@@ -1,0 +1,3 @@
+public void setDelegate(PhonebookSelectActivity.PhonebookSelectActivityDelegate phonebookSelectActivityDelegate){
+  delegate=phonebookSelectActivityDelegate;
+}

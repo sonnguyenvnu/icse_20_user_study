@@ -1,0 +1,14 @@
+/** 
+ * ???????????????????ProviderInfo??
+ * @param urls ????
+ * @return ??????????????null
+ */
+public static List<ProviderInfo> parseProviderInfos(List<String> urls){
+  List<ProviderInfo> providers=new ArrayList<ProviderInfo>();
+  if (CommonUtils.isNotEmpty(urls)) {
+    for (    String object : urls) {
+      providers.add(parseProviderInfo(object));
+    }
+  }
+  return providers;
+}

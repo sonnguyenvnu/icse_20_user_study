@@ -1,0 +1,3 @@
+private static HystrixThreadPoolUtilization sampleThreadPoolUtilization(HystrixThreadPoolMetrics threadPoolMetrics){
+  return HystrixThreadPoolUtilization.sample(threadPoolMetrics);
+}

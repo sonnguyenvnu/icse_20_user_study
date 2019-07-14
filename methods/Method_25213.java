@@ -1,0 +1,3 @@
+Nullness visitWideningConversion(){
+  return NULLABLE;
+}

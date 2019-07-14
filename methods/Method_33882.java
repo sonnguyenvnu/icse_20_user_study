@@ -1,0 +1,6 @@
+@Bean public AccessConfirmationController accessConfirmationController(ClientDetailsService clientDetailsService,ApprovalStore approvalStore){
+  AccessConfirmationController accessConfirmationController=new AccessConfirmationController();
+  accessConfirmationController.setClientDetailsService(clientDetailsService);
+  accessConfirmationController.setApprovalStore(approvalStore);
+  return accessConfirmationController;
+}

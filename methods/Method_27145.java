@@ -1,0 +1,3 @@
+public void setReviewRequestRemovedEvent(PullRequestTimelineQuery.AsReviewRequestRemovedEvent reviewRequestRemovedEvent){
+  this.reviewRequestRemovedEvent=reviewRequestRemovedEvent;
+}

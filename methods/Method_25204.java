@@ -1,0 +1,3 @@
+Nullness visitGreaterThan(){
+  return visitNumericalComparison();
+}

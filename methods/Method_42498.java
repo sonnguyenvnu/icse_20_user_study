@@ -1,0 +1,8 @@
+/** 
+ * ????ID?????????????????????.
+ * @param parentId .
+ * @return menuList.
+ */
+@Override public List<PmsMenu> listByParentId(Long parentId){
+  return super.getSessionTemplate().selectList(getStatement("listByParentId"),parentId);
+}

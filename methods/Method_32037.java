@@ -1,0 +1,25 @@
+protected void assemble(Fields fields){
+  fields.year=convertField(fields.year);
+  fields.yearOfEra=convertField(fields.yearOfEra);
+  fields.yearOfCentury=convertField(fields.yearOfCentury);
+  fields.centuryOfEra=convertField(fields.centuryOfEra);
+  fields.era=convertField(fields.era);
+  fields.dayOfWeek=convertField(fields.dayOfWeek);
+  fields.dayOfMonth=convertField(fields.dayOfMonth);
+  fields.dayOfYear=convertField(fields.dayOfYear);
+  fields.monthOfYear=convertField(fields.monthOfYear);
+  fields.weekOfWeekyear=convertField(fields.weekOfWeekyear);
+  fields.weekyear=convertField(fields.weekyear);
+  fields.weekyearOfCentury=convertField(fields.weekyearOfCentury);
+  fields.millisOfSecond=convertField(fields.millisOfSecond);
+  fields.millisOfDay=convertField(fields.millisOfDay);
+  fields.secondOfMinute=convertField(fields.secondOfMinute);
+  fields.secondOfDay=convertField(fields.secondOfDay);
+  fields.minuteOfHour=convertField(fields.minuteOfHour);
+  fields.minuteOfDay=convertField(fields.minuteOfDay);
+  fields.hourOfDay=convertField(fields.hourOfDay);
+  fields.hourOfHalfday=convertField(fields.hourOfHalfday);
+  fields.clockhourOfDay=convertField(fields.clockhourOfDay);
+  fields.clockhourOfHalfday=convertField(fields.clockhourOfHalfday);
+  fields.halfdayOfDay=convertField(fields.halfdayOfDay);
+}

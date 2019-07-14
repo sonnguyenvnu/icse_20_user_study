@@ -1,0 +1,3 @@
+@Autowired public void setAuthorizationSettingTypeSuppliers(List<AuthorizationSettingTypeSupplier> authorizationSettingTypeSuppliers){
+  this.authorizationSettingTypeSuppliers=authorizationSettingTypeSuppliers;
+}

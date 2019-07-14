@@ -1,0 +1,58 @@
+public static DatabaseColumnType getDbColumnType(int dbColumnType){
+switch (dbColumnType) {
+case java.sql.Types.BIGINT:
+    return DatabaseColumnType.NUMBER;
+case java.sql.Types.FLOAT:
+  return DatabaseColumnType.FLOAT;
+case java.sql.Types.REAL:
+return DatabaseColumnType.DOUBLE;
+case java.sql.Types.DOUBLE:
+return DatabaseColumnType.DOUBLE;
+case java.sql.Types.NUMERIC:
+return DatabaseColumnType.NUMBER;
+case java.sql.Types.DECIMAL:
+return DatabaseColumnType.STRING;
+case java.sql.Types.CHAR:
+return DatabaseColumnType.STRING;
+case java.sql.Types.VARCHAR:
+return DatabaseColumnType.STRING;
+case java.sql.Types.LONGVARCHAR:
+return DatabaseColumnType.STRING;
+case java.sql.Types.DATE:
+return DatabaseColumnType.DATE;
+case java.sql.Types.TIME:
+return DatabaseColumnType.DATETIME;
+case java.sql.Types.TIMESTAMP:
+return DatabaseColumnType.DATETIME;
+case java.sql.Types.BINARY:
+return DatabaseColumnType.STRING;
+case java.sql.Types.VARBINARY:
+return DatabaseColumnType.STRING;
+case java.sql.Types.LONGVARBINARY:
+return DatabaseColumnType.STRING;
+case java.sql.Types.NULL:
+return DatabaseColumnType.STRING;
+case java.sql.Types.OTHER:
+return DatabaseColumnType.STRING;
+case java.sql.Types.JAVA_OBJECT:
+return DatabaseColumnType.STRING;
+case java.sql.Types.DISTINCT:
+return DatabaseColumnType.STRING;
+case java.sql.Types.STRUCT:
+return DatabaseColumnType.STRING;
+case java.sql.Types.ARRAY:
+return DatabaseColumnType.STRING;
+case java.sql.Types.BLOB:
+return DatabaseColumnType.STRING;
+case java.sql.Types.CLOB:
+return DatabaseColumnType.STRING;
+case java.sql.Types.REF:
+return DatabaseColumnType.STRING;
+case java.sql.Types.BOOLEAN:
+return DatabaseColumnType.BOOLEAN;
+case java.sql.Types.INTEGER:
+return DatabaseColumnType.NUMBER;
+default :
+return DatabaseColumnType.STRING;
+}
+}

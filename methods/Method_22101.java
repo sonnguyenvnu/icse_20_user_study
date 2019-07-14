@@ -1,0 +1,8 @@
+/** 
+ * ???????.
+ * @param node ????
+ * @return ?????
+ */
+public String getFullPath(final String node){
+  return String.format("/%s/%s",jobName,node);
+}

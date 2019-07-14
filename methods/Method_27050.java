@@ -1,0 +1,3 @@
+@NonNull public static List<FragmentPagerAdapterModel> buildForMyPulls(@NonNull Context context){
+  return Stream.of(new FragmentPagerAdapterModel(context.getString(R.string.created),MyPullRequestFragment.newInstance(IssueState.open,MyIssuesType.CREATED)),new FragmentPagerAdapterModel(context.getString(R.string.assigned),MyPullRequestFragment.newInstance(IssueState.open,MyIssuesType.ASSIGNED)),new FragmentPagerAdapterModel(context.getString(R.string.mentioned),MyPullRequestFragment.newInstance(IssueState.open,MyIssuesType.MENTIONED)),new FragmentPagerAdapterModel(context.getString(R.string.review_requests),MyPullRequestFragment.newInstance(IssueState.open,MyIssuesType.REVIEW))).collect(Collectors.toList());
+}

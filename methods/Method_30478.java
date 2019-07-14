@@ -1,0 +1,3 @@
+public void onUserChanged(){
+  notifyAccountListViewChanged();
+}

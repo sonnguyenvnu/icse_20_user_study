@@ -1,0 +1,11 @@
+/** 
+ * ?????????UTF8 BOM<br> ??Java?bug??????????? https://stackoverflow.com/questions/4897876/reading-utf-8-bom-marker
+ * @param line ?????
+ * @return ??BOM???
+ */
+public static String removeUTF8BOM(String line){
+  if (line != null && line.startsWith("\uFEFF")) {
+    line=line.substring(1);
+  }
+  return line;
+}

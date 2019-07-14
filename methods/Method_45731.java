@@ -1,0 +1,8 @@
+/** 
+ * ??????false
+ * @param b Boolean??
+ * @return ??????true
+ */
+public static boolean isFalse(Boolean b){
+  return b != null && !b;
+}

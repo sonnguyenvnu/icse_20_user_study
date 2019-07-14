@@ -1,0 +1,3 @@
+public static MessageThread messageThread(){
+  return MessageThread.builder().closed(false).id(123455).lastMessage(MessageFactory.message()).participant(UserFactory.user()).project(ProjectFactory.project()).unreadMessagesCount(0).build();
+}

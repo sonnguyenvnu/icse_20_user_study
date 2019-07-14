@@ -1,0 +1,3 @@
+int getNumRemovals(){
+  return numRemovals;
+}

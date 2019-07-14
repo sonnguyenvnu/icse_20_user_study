@@ -1,0 +1,3 @@
+boolean recordsAccess(){
+  return expiresAfterAccess();
+}

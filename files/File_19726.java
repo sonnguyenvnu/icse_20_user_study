@@ -1,0 +1,57 @@
+package com.example.demo.controller;
+
+import com.example.demo.domain.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+@RequestMapping("user")
+public class UserController {
+
+    private Logger log = LoggerFactory.getLogger(this.getClass());
+
+    @GetMapping("/{id:\\d+}")
+    public User get(@PathVariable Long id) {
+        log.info("èŽ·å?–ç”¨æˆ·idä¸º " + id + "çš„ä¿¡æ?¯");
+        return new User(id, "mrbird", "123456");
+    }
+
+    @GetMapping("users")
+    public List<User> get(String ids) {
+        log.info("æ‰¹é‡?èŽ·å?–ç”¨æˆ·ä¿¡æ?¯");
+        List<User> list = new ArrayList<>();
+        for (String id : ids.split(",")) {
+            list.add(new User(Long.valueOf(id), "user" + id, "123456"));
+        }
+        return list;
+    }
+
+    @GetMapping
+    public List<User> get() {
+        List<User> list = new ArrayList<>();
+        list.add(new User(1L, "mrbird", "123456"));
+        list.add(new User(2L, "scott", "123456"));
+        log.info("èŽ·å?–ç”¨æˆ·ä¿¡æ?¯ " + list);
+        return list;
+    }
+
+    @PostMapping
+    public void add(@RequestBody User user) {
+        log.info("æ–°å¢žç”¨æˆ·æˆ?åŠŸ " + user);
+    }
+
+    @PutMapping
+    public void update(@RequestBody User user) {
+        log.info("æ›´æ–°ç”¨æˆ·æˆ?åŠŸ " + user);
+    }
+
+    @DeleteMapping("/{id:\\d+}")
+    public void delete(@PathVariable Long id) {
+        log.info("åˆ é™¤ç”¨æˆ·æˆ?åŠŸ " + id);
+    }
+
+}

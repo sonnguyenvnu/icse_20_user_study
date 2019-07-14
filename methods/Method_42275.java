@@ -1,0 +1,23 @@
+/** 
+ * ?ViewPager???????
+ * @param direction
+ * @return
+ */
+@Override public boolean canScrollVertically(int direction){
+  if (mPinchMode == PinchImageView.PINCH_MODE_SCALE) {
+    return true;
+  }
+  RectF bound=getImageBound(null);
+  if (bound == null) {
+    return false;
+  }
+  if (bound.isEmpty()) {
+    return false;
+  }
+  if (direction > 0) {
+    return bound.bottom > getHeight();
+  }
+ else {
+    return bound.top < 0;
+  }
+}

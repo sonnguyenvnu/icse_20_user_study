@@ -1,0 +1,3 @@
+@NonNull private static Bundle getBundle(@NonNull String login,@NonNull String repoId,int number,@NonNull String title,@NonNull String body,@NonNull User user,@Nullable User assignee,@Nullable LabelListModel labels,@Nullable MilestoneModel milestone,boolean canComment){
+  return Bundler.start().put(BundleConstant.EXTRA_SEVEN,login).put(BundleConstant.EXTRA_EIGHT,repoId).put(BundleConstant.ID,number).put(BundleConstant.EXTRA,title).put(BundleConstant.EXTRA_TWO,body).put(BundleConstant.EXTRA_THREE,user).put(BundleConstant.EXTRA_FOUR,assignee).putParcelableArrayList(BundleConstant.EXTRA_FIVE,labels).put(BundleConstant.EXTRA_SIX,milestone).put(BundleConstant.YES_NO_EXTRA,canComment).end();
+}

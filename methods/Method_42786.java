@@ -1,0 +1,14 @@
+/** 
+ * ??????????????????
+ * @param str ???????
+ * @param minLength ????
+ */
+public static boolean checkStrMinLengthByBytes(String str,Integer minLength){
+  int length=str.getBytes().length;
+  if (length >= minLength) {
+    return true;
+  }
+ else {
+    return false;
+  }
+}

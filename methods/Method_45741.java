@@ -1,0 +1,8 @@
+/** 
+ * ??????????
+ * @param date ??
+ * @return ?????
+ */
+public static String dateToMillisStr(Date date){
+  return dateToStr(date,DATE_FORMAT_MILLS_TIME);
+}

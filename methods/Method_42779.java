@@ -1,0 +1,9 @@
+/** 
+ * ????????????Email??.
+ * @param str ??????
+ * @return ?Email????true,????false
+ */
+public static boolean isEmail(String str){
+  Pattern pattern=Pattern.compile("^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$");
+  return pattern.matcher(str).matches();
+}

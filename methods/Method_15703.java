@@ -1,0 +1,3 @@
+@Bean @ConfigurationProperties(prefix="hsweb.authorize") public AopAuthorizingController aopAuthorizingController(AuthorizingHandler authorizingHandler,AopMethodAuthorizeDefinitionParser aopMethodAuthorizeDefinitionParser){
+  return new AopAuthorizingController(authorizingHandler,aopMethodAuthorizeDefinitionParser);
+}

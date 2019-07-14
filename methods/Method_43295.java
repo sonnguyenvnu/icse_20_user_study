@@ -1,0 +1,3 @@
+public HttpResponseAwareList<BitmexPrivateExecution> getTradeHistory(String symbol,String filter,String columns,Integer count,Long start,Boolean reverse,Date startTime,Date endTime) throws ExchangeException {
+  return updateRateLimit(() -> bitmex.getTradeHistory(apiKey,exchange.getNonceFactory(),signatureCreator,symbol,filter,columns,count,start,reverse,startTime,endTime));
+}

@@ -1,0 +1,3 @@
+public static EqualToXmlPattern equalToXml(String value,boolean enablePlaceholders,String placeholderOpeningDelimiterRegex,String placeholderClosingDelimiterRegex){
+  return new EqualToXmlPattern(value,enablePlaceholders,placeholderOpeningDelimiterRegex,placeholderClosingDelimiterRegex);
+}

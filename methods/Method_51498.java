@@ -1,0 +1,4 @@
+private String header(){
+  StringBuilder sb=new StringBuilder(600).append("<html><head><title>PMD</title></head>").append("<style type=\"text/css\">").append("<!--" + PMD.EOL).append("body { background-color: white; font-family:verdana, arial, helvetica, geneva; font-size: 16px; font-style: italic; color: black; }").append(PMD.EOL).append(".title { font-family: verdana, arial, helvetica,geneva; font-size: 12px; font-weight:bold; color: white; }").append(PMD.EOL).append(".body { font-family: verdana, arial, helvetica, geneva; font-size: 12px; font-weight:plain; color: black; }").append(PMD.EOL).append("#TableHeader { background-color: #003366; }").append(PMD.EOL).append("#RowColor1 { background-color: #eeeeee; }").append(PMD.EOL).append("#RowColor2 { background-color: white; }").append(PMD.EOL).append("-->").append("</style>").append("<body><center>");
+  return sb.toString();
+}

@@ -1,0 +1,8 @@
+/** 
+ * ???????????
+ * @param dirPath ????
+ * @return {@code true}: ????<br> {@code false}: ????
+ */
+public static boolean cleanCustomCache(String dirPath){
+  return RxFileTool.deleteFilesInDir(dirPath);
+}

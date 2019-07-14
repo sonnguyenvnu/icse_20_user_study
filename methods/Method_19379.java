@@ -1,0 +1,3 @@
+boolean hasBeenDetachedFromWindow(){
+  return mHasBeenDetachedFromWindow;
+}

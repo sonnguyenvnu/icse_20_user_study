@@ -1,0 +1,19 @@
+private void buildSimpleJobSettings(final String jobName,final JobSettings result,final LiteJobConfiguration liteJobConfig){
+  result.setJobName(jobName);
+  result.setJobType(liteJobConfig.getTypeConfig().getJobType().name());
+  result.setJobClass(liteJobConfig.getTypeConfig().getJobClass());
+  result.setShardingTotalCount(liteJobConfig.getTypeConfig().getCoreConfig().getShardingTotalCount());
+  result.setCron(liteJobConfig.getTypeConfig().getCoreConfig().getCron());
+  result.setShardingItemParameters(liteJobConfig.getTypeConfig().getCoreConfig().getShardingItemParameters());
+  result.setJobParameter(liteJobConfig.getTypeConfig().getCoreConfig().getJobParameter());
+  result.setMonitorExecution(liteJobConfig.isMonitorExecution());
+  result.setMaxTimeDiffSeconds(liteJobConfig.getMaxTimeDiffSeconds());
+  result.setMonitorPort(liteJobConfig.getMonitorPort());
+  result.setFailover(liteJobConfig.getTypeConfig().getCoreConfig().isFailover());
+  result.setMisfire(liteJobConfig.getTypeConfig().getCoreConfig().isMisfire());
+  result.setJobShardingStrategyClass(liteJobConfig.getJobShardingStrategyClass());
+  result.setDescription(liteJobConfig.getTypeConfig().getCoreConfig().getDescription());
+  result.setReconcileIntervalMinutes(liteJobConfig.getReconcileIntervalMinutes());
+  result.getJobProperties().put(JobProperties.JobPropertiesEnum.EXECUTOR_SERVICE_HANDLER.getKey(),liteJobConfig.getTypeConfig().getCoreConfig().getJobProperties().get(JobProperties.JobPropertiesEnum.EXECUTOR_SERVICE_HANDLER));
+  result.getJobProperties().put(JobProperties.JobPropertiesEnum.JOB_EXCEPTION_HANDLER.getKey(),liteJobConfig.getTypeConfig().getCoreConfig().getJobProperties().get(JobProperties.JobPropertiesEnum.JOB_EXCEPTION_HANDLER));
+}

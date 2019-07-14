@@ -1,0 +1,9 @@
+@Override public void writeFile(String fileId,OutputStream out,long skip) throws IOException {
+  try (InputStream inputStream=readFile(fileId)){
+    if (skip > 0) {
+      long len=inputStream.skip(skip);
+      log.info("skip write {} len:{}",skip,len);
+    }
+    StreamUtils.copy(inputStream,out);
+  }
+ }

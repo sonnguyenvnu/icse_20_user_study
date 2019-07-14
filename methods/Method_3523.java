@@ -1,0 +1,8 @@
+/** 
+ * ????????????DeQueue??
+ * @return
+ */
+public QueueElement GetFirst(){
+  pLastAccess=pHead;
+  return pLastAccess;
+}

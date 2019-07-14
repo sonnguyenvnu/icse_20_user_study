@@ -1,0 +1,32 @@
+static void printCommandLine(PrintStream out){
+  out.println();
+  out.println("Command line edition for Processing " + Base.getVersionName() + " (Java Mode)");
+  out.println();
+  out.println("--help               Show this help text. Congratulations.");
+  out.println();
+  out.println("--sketch=<name>      Specify the sketch folder (required)");
+  out.println("--output=<name>      Specify the output folder (optional and");
+  out.println("                     cannot be the same as the sketch folder.)");
+  out.println();
+  out.println("--force              The sketch will not build if the output");
+  out.println("                     folder already exists, because the contents");
+  out.println("                     will be replaced. This option erases the");
+  out.println("                     folder first. Use with extreme caution!");
+  out.println();
+  out.println("--build              Preprocess and compile a sketch into .class files.");
+  out.println("--run                Preprocess, compile, and run a sketch.");
+  out.println("--present            Preprocess, compile, and run a sketch in presentation mode.");
+  out.println();
+  out.println("--export             Export an application.");
+  out.println("--no-java            Do not embed Java. Use at your own risk!");
+  out.println("--platform           Specify the platform (export to application only).");
+  out.println("                     Should be one of 'windows', 'macosx', or 'linux'.");
+  out.println();
+  out.println("The --build, --run, --present, or --export must be the final parameter");
+  out.println("passed to Processing. Arguments passed following one of those four will");
+  out.println("be passed through to the sketch itself, and therefore available to the");
+  out.println("sketch via the 'args' field. To pass options understood by PApplet.main(),");
+  out.println("write a custom main() method so that the preprocessor does not add one.");
+  out.println("https://github.com/processing/processing/wiki/Command-Line");
+  out.println();
+}

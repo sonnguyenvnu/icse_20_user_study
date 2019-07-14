@@ -1,0 +1,8 @@
+/** 
+ * ?????????????????.
+ * @param serverIp ???IP??
+ * @return ??????????
+ */
+@GET @Path("/{serverIp}/jobs") @Produces(MediaType.APPLICATION_JSON) public Collection<JobBriefInfo> getJobs(@PathParam("serverIp") final String serverIp){
+  return jobAPIService.getJobStatisticsAPI().getJobsBriefInfo(serverIp);
+}

@@ -1,0 +1,3 @@
+@Nullable private ImageTranscoder getNativeImageTranscoder(ImageFormat imageFormat,boolean isResizingEnabled){
+  return NativeImageTranscoderFactory.getNativeImageTranscoderFactory(mMaxBitmapSize,mUseDownSamplingRatio).createImageTranscoder(imageFormat,isResizingEnabled);
+}

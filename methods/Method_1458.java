@@ -1,0 +1,3 @@
+public DiskCacheWriteProducer newDiskCacheWriteProducer(Producer<EncodedImage> inputProducer){
+  return new DiskCacheWriteProducer(mDefaultBufferedDiskCache,mSmallImageBufferedDiskCache,mCacheKeyFactory,inputProducer);
+}

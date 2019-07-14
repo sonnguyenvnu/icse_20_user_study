@@ -1,0 +1,3 @@
+Nullness visitStringConcatenateAssignment(){
+  return NULLABLE;
+}

@@ -1,0 +1,24 @@
+/** 
+ * ????
+ * @param keyChars ??char??
+ * @param pos      char???????
+ * @param len      ????
+ * @param nodePos  ?????????????????????
+ * @return ????????value ID????????
+ */
+private int exactMatchSearch(char[] keyChars,int pos,int len,int nodePos){
+  int result=-1;
+  int b=base[nodePos];
+  int p;
+  for (int i=pos; i < len; i++) {
+    p=b + (int)(keyChars[i]) + 1;
+    if (b == check[p])     b=base[p];
+ else     return result;
+  }
+  p=b;
+  int n=base[p];
+  if (b == check[p] && n < 0) {
+    result=-n - 1;
+  }
+  return result;
+}

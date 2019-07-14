@@ -1,0 +1,3 @@
+public DefaultOAuth2Granter addAuthorizationCodeSupport(AuthorizationCodeGranter authorizationCodeService){
+  return addGranter(GrantType.authorization_code,AuthorizationCodeTokenRequest.class,authorizationCodeService::requestToken);
+}

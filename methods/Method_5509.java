@@ -1,0 +1,3 @@
+@TargetApi(21) @SuppressWarnings("ResourceType") private static CaptionStyleCompat createFromCaptionStyleV21(CaptioningManager.CaptionStyle captionStyle){
+  return new CaptionStyleCompat(captionStyle.hasForegroundColor() ? captionStyle.foregroundColor : DEFAULT.foregroundColor,captionStyle.hasBackgroundColor() ? captionStyle.backgroundColor : DEFAULT.backgroundColor,captionStyle.hasWindowColor() ? captionStyle.windowColor : DEFAULT.windowColor,captionStyle.hasEdgeType() ? captionStyle.edgeType : DEFAULT.edgeType,captionStyle.hasEdgeColor() ? captionStyle.edgeColor : DEFAULT.edgeColor,captionStyle.getTypeface());
+}

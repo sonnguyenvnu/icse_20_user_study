@@ -1,0 +1,3 @@
+@Override protected void notifyChanged(int requestCode,Movie newItem,Rating newRating,List<Photo> newPhotoList,List<SimpleCelebrity> newCelebrityList,List<ItemAwardItem> newAwardList,List<SimpleItemCollection> newItemCollectionList,List<SimpleReview> newGameGuideList,List<SimpleReview> newReviewList,List<SimpleItemForumTopic> newForumTopicList,List<CollectableItem> newRecommendationList,List<Doulist> newRelatedDoulistList){
+  getListener().onChanged(requestCode,newItem,newRating,newPhotoList,newCelebrityList,newAwardList,newItemCollectionList,newReviewList,newForumTopicList,newRecommendationList,newRelatedDoulistList);
+}

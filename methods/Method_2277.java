@@ -1,0 +1,3 @@
+@OnCreateInitialState static void onCreateInitialState(ComponentContext context,StateValue<FrescoState> lastFrescoState,@Prop(optional=true) final @Nullable Uri uri,@Prop(optional=true) final @Nullable MultiUri multiUri,@Prop(optional=true) final @Nullable ImageOptions imageOptions,@Prop(optional=true) final @Nullable FrescoContext frescoContext,@Prop(optional=true) final @Nullable Object callerContext,@Prop(optional=true) final @Nullable ImageListener imageListener){
+  lastFrescoState.set(getController(context,frescoContext).createState(uri,multiUri,imageOptions != null ? imageOptions : ImageOptions.defaults(),callerContext,context.getResources(),imageListener));
+}

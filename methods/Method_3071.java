@@ -1,0 +1,10 @@
+/** 
+ * ?????????<br> ????????IOAdapter?????????????? = HanLP.Config.CustomDictionaryPath[0] + Predefine.BIN_EXT?
+ * @return ??????
+ */
+public static boolean reload(){
+  String path[]=HanLP.Config.CustomDictionaryPath;
+  if (path == null || path.length == 0)   return false;
+  IOUtil.deleteFile(path[0] + Predefine.BIN_EXT);
+  return loadMainDictionary(path[0]);
+}

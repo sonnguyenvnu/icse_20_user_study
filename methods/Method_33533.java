@@ -1,0 +1,9 @@
+/** 
+ * ????? eventType ????????(eventType)? ????
+ * @param eventType ????
+ * @param < T >
+ * @return
+ */
+public <T>Observable<T> toObservable(Class<T> eventType){
+  return _bus.ofType(eventType);
+}

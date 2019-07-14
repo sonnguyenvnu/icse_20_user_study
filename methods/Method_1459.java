@@ -1,0 +1,3 @@
+public PartialDiskCacheProducer newPartialDiskCacheProducer(Producer<EncodedImage> inputProducer){
+  return new PartialDiskCacheProducer(mDefaultBufferedDiskCache,mCacheKeyFactory,mPooledByteBufferFactory,mByteArrayPool,inputProducer);
+}

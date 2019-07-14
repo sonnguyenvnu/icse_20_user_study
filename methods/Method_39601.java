@@ -1,0 +1,3 @@
+boolean hasAsmInstructions(){
+  return hasAsmInstructions;
+}

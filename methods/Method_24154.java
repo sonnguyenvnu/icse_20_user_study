@@ -1,0 +1,3 @@
+protected void defaultPerspective(){
+  perspective();
+}

@@ -1,0 +1,10 @@
+/** 
+ * ?????tf-idf??????
+ * @param tf     ??
+ * @param idf    ????
+ * @param < TERM > ????
+ * @return ????->tf-idf?Map
+ */
+public static <TERM>Map<TERM,Double> tfIdf(Map<TERM,Double> tf,Map<TERM,Double> idf){
+  return tfIdf(tf,idf,Normalization.NONE);
+}

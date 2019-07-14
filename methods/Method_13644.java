@@ -1,0 +1,3 @@
+@Bean @ConditionalOnBean(AutoServiceRegistrationProperties.class) @ConditionalOnProperty(value="spring.cloud.service-registry.auto-registration.enabled",matchIfMissing=true) public AnsAutoServiceRegistration ansAutoServiceRegistration(AnsServiceRegistry registry,AutoServiceRegistrationProperties autoServiceRegistrationProperties,AnsRegistration registration){
+  return new AnsAutoServiceRegistration(registry,autoServiceRegistrationProperties,registration);
+}

@@ -1,0 +1,44 @@
+public void cleanup(){
+  for (int a=0; a < 3; a++) {
+    recentStickers[a].clear();
+    loadingRecentStickers[a]=false;
+    recentStickersLoaded[a]=false;
+  }
+  for (int a=0; a < 4; a++) {
+    loadHash[a]=0;
+    loadDate[a]=0;
+    stickerSets[a].clear();
+    loadingStickers[a]=false;
+    stickersLoaded[a]=false;
+  }
+  featuredStickerSets.clear();
+  loadFeaturedDate=0;
+  loadFeaturedHash=0;
+  allStickers.clear();
+  allStickersFeatured.clear();
+  stickersByEmoji.clear();
+  featuredStickerSetsById.clear();
+  featuredStickerSets.clear();
+  unreadStickerSets.clear();
+  recentGifs.clear();
+  stickerSetsById.clear();
+  installedStickerSetsById.clear();
+  stickerSetsByName.clear();
+  loadingFeaturedStickers=false;
+  featuredStickersLoaded=false;
+  loadingRecentGifs=false;
+  recentGifsLoaded=false;
+  currentFetchingEmoji.clear();
+  loading=false;
+  loaded=false;
+  hints.clear();
+  inlineBots.clear();
+  NotificationCenter.getInstance(currentAccount).postNotificationName(NotificationCenter.reloadHints);
+  NotificationCenter.getInstance(currentAccount).postNotificationName(NotificationCenter.reloadInlineHints);
+  drafts.clear();
+  draftMessages.clear();
+  preferences.edit().clear().commit();
+  botInfos.clear();
+  botKeyboards.clear();
+  botKeyboardsByMids.clear();
+}

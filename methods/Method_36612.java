@@ -1,0 +1,7 @@
+/** 
+ * ????????????
+ * @param message ???
+ */
+public void startWithText(String message){
+  startWithText(message,inAnimResId,outAnimResId);
+}

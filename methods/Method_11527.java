@@ -1,0 +1,3 @@
+@Override public void setThread(int thread){
+  httpClientGenerator.setPoolSize(thread);
+}

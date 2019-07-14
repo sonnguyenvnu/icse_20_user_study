@@ -1,0 +1,9 @@
+/** 
+ * Set values which may be out of bounds by adding the difference between the new value and the current value.
+ */
+public long set(long instant,int value){
+  long localInstant=iBase.getZone().convertUTCToLocal(instant);
+  long difference=FieldUtils.safeSubtract(value,get(instant));
+  localInstant=getType().getField(iBase.withUTC()).add(localInstant,difference);
+  return iBase.getZone().convertLocalToUTC(localInstant,false,instant);
+}

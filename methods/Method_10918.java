@@ -1,0 +1,15 @@
+/** 
+ * ??????????? <p>????????</p>
+ * @param time   ?????
+ * @param format ????
+ * @return ?????
+ */
+public static long string2Milliseconds(String time,SimpleDateFormat format){
+  try {
+    return format.parse(time).getTime();
+  }
+ catch (  ParseException e) {
+    e.printStackTrace();
+  }
+  return -1;
+}

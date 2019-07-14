@@ -1,0 +1,3 @@
+TypeName getParameterizedGeneratedName(){
+  return parametrizedClassName;
+}

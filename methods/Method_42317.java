@@ -1,0 +1,31 @@
+@Override public void updateUiElements(){
+  super.updateUiElements();
+  toolbar.setBackgroundColor(getPrimaryColor());
+  setStatusBarColor();
+  setNavBarColor();
+  setRecentApp(getString(org.horaapps.leafpic.R.string.donate));
+  themeSeekBar(bar);
+  themeButton(btnDonateIap);
+  themeButton(btnDonatePP);
+  ((TextView)findViewById(org.horaapps.leafpic.R.id.team_name)).setTextColor(getAccentColor());
+  ((TextView)findViewById(org.horaapps.leafpic.R.id.donate_googleplay_item_title)).setTextColor(getAccentColor());
+  ((TextView)findViewById(org.horaapps.leafpic.R.id.donate_paypal_item_title)).setTextColor(getAccentColor());
+  ((TextView)findViewById(org.horaapps.leafpic.R.id.donate_bitcoin_item_title)).setTextColor(getAccentColor());
+  findViewById(org.horaapps.leafpic.R.id.donate_background).setBackgroundColor(getBackgroundColor());
+  int color=getCardBackgroundColor();
+  ((CardView)findViewById(org.horaapps.leafpic.R.id.donate_googleplay_card)).setCardBackgroundColor(color);
+  ((CardView)findViewById(org.horaapps.leafpic.R.id.donate_paypal_card)).setCardBackgroundColor(color);
+  ((CardView)findViewById(org.horaapps.leafpic.R.id.donate_bitcoin_card)).setCardBackgroundColor(color);
+  ((CardView)findViewById(org.horaapps.leafpic.R.id.donate_header_card)).setCardBackgroundColor(color);
+  color=getIconColor();
+  ((ThemedIcon)findViewById(org.horaapps.leafpic.R.id.donate_googleplay_icon_title)).setColor(color);
+  ((ThemedIcon)findViewById(org.horaapps.leafpic.R.id.donate_paypal_icon_title)).setColor(color);
+  ((ThemedIcon)findViewById(org.horaapps.leafpic.R.id.donate_bitcoin_icon_title)).setColor(color);
+  ((ThemedIcon)findViewById(org.horaapps.leafpic.R.id.donate_header_icon)).setColor(color);
+  color=getTextColor();
+  ((TextView)findViewById(org.horaapps.leafpic.R.id.donate_googleplay_item)).setTextColor(color);
+  ((TextView)findViewById(org.horaapps.leafpic.R.id.donate_paypal_item)).setTextColor(color);
+  ((TextView)findViewById(org.horaapps.leafpic.R.id.donate_bitcoin_item)).setTextColor(color);
+  ((TextView)findViewById(org.horaapps.leafpic.R.id.donate_header_item)).setTextColor(color);
+  setScrollViewColor(scr);
+}

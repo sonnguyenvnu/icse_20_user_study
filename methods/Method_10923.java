@@ -1,0 +1,8 @@
+/** 
+ * ??????Date??
+ * @param milliseconds ?????
+ * @return Date????
+ */
+public static Date milliseconds2Date(long milliseconds){
+  return new Date(milliseconds);
+}

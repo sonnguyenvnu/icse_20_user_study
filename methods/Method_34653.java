@@ -1,0 +1,3 @@
+public ExecutionResult setExecutionException(Exception executionException){
+  return new ExecutionResult(eventCounts,startTimestamp,executionLatency,userThreadLatency,failedExecutionException,executionException,executionOccurred,isExecutedInThread,collapserKey);
+}

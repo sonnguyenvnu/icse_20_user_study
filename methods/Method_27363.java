@@ -1,0 +1,4 @@
+private void withoutComments(Notification thread,Context context,int accentColor){
+  android.app.Notification toAdd=getNotification(thread.getSubject().getTitle(),thread.getRepository().getFullName(),thread.getRepository() != null ? thread.getRepository().getFullName() : "general").setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher)).setContentIntent(getPendingIntent(thread.getId(),thread.getSubject().getUrl())).addAction(R.drawable.ic_github,context.getString(R.string.open),getPendingIntent(thread.getId(),thread.getSubject().getUrl())).addAction(R.drawable.ic_eye_off,context.getString(R.string.mark_as_read),getReadOnlyPendingIntent(thread.getId(),thread.getSubject().getUrl())).setWhen(thread.getUpdatedAt() != null ? thread.getUpdatedAt().getTime() : System.currentTimeMillis()).setShowWhen(true).setColor(accentColor).setGroup(NOTIFICATION_GROUP_ID).build();
+  showNotification(thread.getId(),toAdd);
+}

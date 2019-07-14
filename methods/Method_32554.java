@@ -1,0 +1,10 @@
+/** 
+ * Add a number of years to the date.
+ * @param years  the years to add
+ * @throws IllegalArgumentException if the value is invalid
+ */
+public void addYears(final int years){
+  if (years != 0) {
+    setMillis(getChronology().years().add(getMillis(),years));
+  }
+}

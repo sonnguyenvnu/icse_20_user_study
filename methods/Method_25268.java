@@ -1,0 +1,3 @@
+static ErrorProneAnalyzer createWithCustomDescriptionListener(CodeTransformer codeTransformer,ErrorProneOptions errorProneOptions,Context context,DescriptionListener.Factory descriptionListenerFactory){
+  return new ErrorProneAnalyzer(Suppliers.ofInstance(codeTransformer),errorProneOptions,context,descriptionListenerFactory);
+}

@@ -1,0 +1,8 @@
+/** 
+ * ??????
+ * @param sentence ??????
+ * @return CoNLL????????
+ */
+public static CoNLLSentence parseDependency(String sentence){
+  return NeuralNetworkDependencyParser.compute(sentence);
+}

@@ -1,0 +1,3 @@
+void onAnimationEnd(){
+  minimumRequiredWidth=currentWidth;
+}

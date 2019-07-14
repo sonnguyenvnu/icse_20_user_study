@@ -1,0 +1,9 @@
+/** 
+ * ???  ??? ??????? ??format?????????
+ * @param times  ???
+ * @param format ???? yyyy-MM-dd HH:mm:ss
+ * @return
+ */
+@SuppressLint("SimpleDateFormat") public static String getDate(String times,String format){
+  return simpleDateFormat(format,new Date(stringToInt(times) * 1000L));
+}

@@ -1,0 +1,11 @@
+/** 
+ * ???????????????
+ * @param str ???????
+ * @param minLength ????
+ * @param message ????
+ */
+public static void checkStrMinLength(String str,Integer minLength,String message){
+  if (str.trim().length() < minLength) {
+    throw new IllegalArgumentException(message);
+  }
+}

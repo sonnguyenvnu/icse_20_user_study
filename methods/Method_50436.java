@@ -1,0 +1,3 @@
+private static String buildPostgresql(final String tableName){
+  return " CREATE TABLE IF NOT EXISTS " + tableName + "(" + "  trans_id       VARCHAR(64) PRIMARY KEY," + "  target_class   VARCHAR(256)," + "  target_method  VARCHAR(128)," + "  confirm_method VARCHAR(128)," + "  cancel_method  VARCHAR(128)," + "  retried_count  SMALLINT    NOT NULL," + "  create_time    TIMESTAMP   NOT NULL," + "  last_time      TIMESTAMP   NOT NULL," + "  version        SMALLINT    NOT NULL," + "  status         SMALLINT    NOT NULL," + "  invocation     BYTEA," + "  role           SMALLINT    NOT NULL," + "  pattern        SMALLINT    NOT NULL" + ");";
+}

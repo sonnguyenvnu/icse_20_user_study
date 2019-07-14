@@ -1,0 +1,8 @@
+/** 
+ * ?????0?????
+ * @param rightnow ????
+ * @return the int ?????????
+ */
+public static int getDelayToNextMinute(long rightnow){
+  return (int)(MILLISECONDS_PER_MINUTE - (rightnow % MILLISECONDS_PER_MINUTE));
+}

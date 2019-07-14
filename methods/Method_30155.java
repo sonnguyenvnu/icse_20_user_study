@@ -1,0 +1,3 @@
+public boolean isAnyLoaded(){
+  return hasItem() || (mRatingResource != null && mRatingResource.has()) || (mPhotoListResource != null && mPhotoListResource.has()) || (mCelebrityListResource != null && mCelebrityListResource.has()) || (mAwardListResource != null && mAwardListResource.has()) || (mItemCollectionListResource != null && mItemCollectionListResource.has()) || (mGameGuideListResource != null && mGameGuideListResource.has()) || (mReviewListResource != null && mReviewListResource.has()) || (mForumTopicListResource != null && mForumTopicListResource.has()) || (mRecommendationListResource != null && mRecommendationListResource.has()) || (mRelatedDoulistListResource != null && mRelatedDoulistListResource.has());
+}

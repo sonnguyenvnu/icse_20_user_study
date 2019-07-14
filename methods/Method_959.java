@@ -1,0 +1,3 @@
+private BitmapFramePreparer createBitmapFramePreparer(BitmapFrameRenderer bitmapFrameRenderer){
+  return new DefaultBitmapFramePreparer(mPlatformBitmapFactory,bitmapFrameRenderer,Bitmap.Config.ARGB_8888,mExecutorServiceForFramePreparing);
+}

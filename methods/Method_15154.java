@@ -1,0 +1,10 @@
+/** 
+ * ?object???key???? *????T??????????????try-catch
+ * @param json
+ * @param key
+ * @return
+ * @throws JSONException 
+ */
+public <T>T getValue(String json,String key) throws JSONException {
+  return getValue(new JSONObject(json),key);
+}

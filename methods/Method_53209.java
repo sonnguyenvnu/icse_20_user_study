@@ -1,0 +1,3 @@
+String asHexString(){
+  return hexString;
+}

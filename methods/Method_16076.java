@@ -1,0 +1,17 @@
+/** 
+ * ???????????????,????? {@link Optional},?????,????? {@link Optional#empty()}
+ * @param type      ???{@link EnumDict}????
+ * @param predicate ????
+ * @param < T >       ????
+ * @return ??????
+ */
+static <T extends Enum & EnumDict>Optional<T> find(Class<T> type,Predicate<T> predicate){
+  if (type.isEnum()) {
+    for (    T enumDict : type.getEnumConstants()) {
+      if (predicate.test(enumDict)) {
+        return Optional.of(enumDict);
+      }
+    }
+  }
+  return Optional.empty();
+}

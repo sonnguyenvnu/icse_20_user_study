@@ -1,0 +1,9 @@
+/** 
+ * ????????????????????????
+ * @param configKey   ???
+ * @param configValue ???
+ * @throws SofaRpcRuntimeException ????
+ */
+protected static void checkNormalWithComma(String configKey,String configValue) throws SofaRpcRuntimeException {
+  checkPattern(configKey,configValue,NORMAL_COMMA,"only allow a-zA-Z0-9 '-' '_' '.' ','");
+}
