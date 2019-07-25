@@ -1,0 +1,3 @@
+private void timeout(){
+  stopRecord();
+}

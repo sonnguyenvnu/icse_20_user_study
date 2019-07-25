@@ -1,0 +1,12 @@
+public static void init(SNode node,SModel model){
+  SNode property=SLinkOperations.addNewChild(node,MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x101d9d3ca30L,0x4a9a46de59132803L,"member"),MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L,0xbc73f2e16994cc67L,0x59e9926e84100ec3L,"jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance"));
+  SLinkOperations.setTarget(property,MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x450368d90ce15bc3L,0x4ed4d318133c80ceL,"type"),SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0xf940d6513eL,"jetbrains.mps.baseLanguage.structure.BooleanType")));
+  SPropertyOperations.assign(property,MetaAdapterFactory.getProperty(0xceab519525ea4f22L,0x9b92103b95ca8c0cL,0x110396eaaa4L,0x110396ec041L,"name"),"logicalProperty");
+  SLinkOperations.setTarget(property,MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x112670d273fL,0x112670d886aL,"visibility"),SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x10af9581ff1L,"jetbrains.mps.baseLanguage.structure.PublicVisibility")));
+  SLinkOperations.setTarget(property,MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L,0xbc73f2e16994cc67L,0x59e9926e840d9151L,0x772497abf2e77969L,"decl"),SNodeOperations.as(ListSequence.fromList(SLinkOperations.getChildren(DSLDescriptorUtil.getDescriptor(node),MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L,0xbc73f2e16994cc67L,0x340eb2bd2e03d160L,0x72b255a0447fe4c8L,"classLikeMember"))).findFirst(new IWhereFilter<SNode>(){
+    public boolean accept(    SNode it){
+      return SNodeOperations.isInstanceOf(it,MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L,0xbc73f2e16994cc67L,0x72b255a0447fbb31L,"jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor")) && Objects.equals(SPropertyOperations.getString(SNodeOperations.cast(it,MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L,0xbc73f2e16994cc67L,0x72b255a0447fbb31L,"jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor")),MetaAdapterFactory.getProperty(0xceab519525ea4f22L,0x9b92103b95ca8c0cL,0x110396eaaa4L,0x110396ec041L,"name")),"logicalProperty");
+    }
+  }
+),MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L,0xbc73f2e16994cc67L,0x72b255a0447fbb31L,"jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyDescriptor")));
+}

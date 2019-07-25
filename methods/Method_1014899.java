@@ -1,0 +1,3 @@
+public static ResEntity error(){
+  return error(HttpStatus.SC_INTERNAL_SERVER_ERROR,"???????????");
+}

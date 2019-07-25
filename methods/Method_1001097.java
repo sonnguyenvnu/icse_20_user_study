@@ -1,0 +1,29 @@
+public static Object agdelrec(Object... arg){
+  UNSUPPORTED("8scieaa3q398qeq2uv44asga1");
+  UNSUPPORTED("erg9i1970wdri39osu8hx2a6e");
+  UNSUPPORTED("14h5et4t79wqu2qo8divf5tkt");
+  UNSUPPORTED("146agbqco6st2hn1ajcek08r6");
+  UNSUPPORTED("1dbyk58q3r4fyfxxo7ovemkpu");
+  UNSUPPORTED("ami3me63drun9ofwwmxainjy5");
+  UNSUPPORTED("8pfuk9ua4x9bh68zk1kzwc5t9");
+  UNSUPPORTED("dhmaidfkewgpedp1d73ef9yx5");
+  UNSUPPORTED("epwrmjxhdofey6itrewqzilu0");
+  UNSUPPORTED("q964zfpibwk1nuufmhbvhvz1");
+  UNSUPPORTED("bxainz8fp03zcbgxzia4t1ta2");
+  UNSUPPORTED("9t6es77h0301xk4n035emz6o");
+  UNSUPPORTED("39koq493kdonzfnv7y451gzku");
+  UNSUPPORTED("ai3czg6gaaxspsmndknpyvuiu");
+  UNSUPPORTED("4ih7nalu307xv8wvdpmgy537r");
+  UNSUPPORTED("f0mphr0n2ielt8cpkw0djd9s9");
+  UNSUPPORTED("3zbev1w97o9vgmm1ifhakk5g6");
+  UNSUPPORTED("9ixqdoo4u64vgpl11kitdhiwj");
+  UNSUPPORTED("ai3czg6gaaxspsmndknpyvuiu");
+  UNSUPPORTED("flupwh3kosf3fkhkxllllt1");
+  UNSUPPORTED("b0419fuh4e7iigkr04vrhwoqw");
+  UNSUPPORTED("9w293r9fg650cqzb27hlm4gm6");
+  UNSUPPORTED("c9ckhc8veujmwcw0ar3u3zld4");
+  UNSUPPORTED("2lkbqgh2h6urnppaik3zo7ywi");
+  UNSUPPORTED("8d9xfgejx5vgd6shva5wk5k06");
+  UNSUPPORTED("c24nfmv9i7o5eoqaymbibp7m7");
+  throw new UnsupportedOperationException();
+}

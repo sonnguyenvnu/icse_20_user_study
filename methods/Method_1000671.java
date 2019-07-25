@@ -1,0 +1,6 @@
+/** 
+ * @return ???????????
+ */
+public static String home(){
+  return System.getProperty("user.home");
+}

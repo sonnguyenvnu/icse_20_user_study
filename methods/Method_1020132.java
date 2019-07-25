@@ -1,0 +1,7 @@
+/** 
+ * ?????????
+ */
+@PostMapping("/bindwx") public Object bindwx(User user){
+  userRepository.save(user);
+  return "??????";
+}

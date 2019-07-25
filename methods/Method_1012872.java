@@ -1,0 +1,6 @@
+/** 
+ * ????????????
+ */
+public static boolean online(){
+  return closeGate.compareAndSet(true,false);
+}

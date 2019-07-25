@@ -1,0 +1,6 @@
+/** 
+ * ?????
+ */
+public void attach(Observer observer){
+  observers.add(observer);
+}

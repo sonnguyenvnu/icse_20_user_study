@@ -1,0 +1,36 @@
+public static AirConditionerRuleTemplate initialize(){
+  List<Trigger> triggers=new ArrayList<Trigger>();
+  triggers.add(ModuleBuilder.createTrigger().withId(TRIGGER_ID).withTypeUID(AirConditionerTriggerType.UID).build());
+  Configuration conditionConfig=new Configuration();
+  conditionConfig.put(StateConditionType.CONFIG_STATE,"on");
+  Map<String,String> conditionInputs=new HashMap<String,String>();
+  conditionInputs.put(StateConditionType.INPUT_CURRENT_STATE,TRIGGER_ID + "." + StateConditionType.INPUT_CURRENT_STATE);
+  Condition stateCondition=ModuleBuilder.createCondition().withId("AirConditionerStateCondition").withTypeUID(StateConditionType.UID).withConfiguration(conditionConfig).withInputs(conditionInputs).build();
+  conditionConfig=new Configuration();
+  conditionConfig.put(TemperatureConditionType.CONFIG_TEMPERATURE,"$" + CONFIG_TARGET_TEMPERATURE);
+  conditionConfig.put(TemperatureConditionType.CONFIG_OPERATOR,"$" + CONFIG_OPERATION);
+  conditionInputs=new HashMap<String,String>();
+  conditionInputs.put(TemperatureConditionType.INPUT_CURRENT_TEMPERATURE,TRIGGER_ID + "." + TemperatureConditionType.INPUT_CURRENT_TEMPERATURE);
+  Condition temperatureCondition=ModuleBuilder.createCondition().withId("AirConditionerTemperatureCondition").withTypeUID(TemperatureConditionType.UID).withConfiguration(conditionConfig).withInputs(conditionInputs).build();
+  List<Condition> conditions=new ArrayList<Condition>();
+  conditions.add(stateCondition);
+  conditions.add(temperatureCondition);
+  Configuration actionConfig=new Configuration();
+  actionConfig.put(WelcomeHomeActionType.CONFIG_DEVICE,"$" + WelcomeHomeRulesProvider.CONFIG_UNIT);
+  actionConfig.put(WelcomeHomeActionType.CONFIG_RESULT,"$" + WelcomeHomeRulesProvider.CONFIG_EXPECTED_RESULT);
+  List<Action> actions=new ArrayList<Action>();
+  actions.add(ModuleBuilder.createAction().withId("AirConditionerSwitchOnAction").withTypeUID(WelcomeHomeActionType.UID).withConfiguration(actionConfig).build());
+  List<ConfigDescriptionParameter> configDescriptions=new ArrayList<ConfigDescriptionParameter>();
+  final ConfigDescriptionParameter device=ConfigDescriptionParameterBuilder.create(WelcomeHomeRulesProvider.CONFIG_UNIT,Type.TEXT).withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Device").withDescription("Device description").build();
+  final ConfigDescriptionParameter result=ConfigDescriptionParameterBuilder.create(WelcomeHomeRulesProvider.CONFIG_EXPECTED_RESULT,Type.TEXT).withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Result").withDescription("Result description").build();
+  final ConfigDescriptionParameter temperature=ConfigDescriptionParameterBuilder.create(CONFIG_TARGET_TEMPERATURE,Type.INTEGER).withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Target temperature").withDescription("Indicates the target temperature.").build();
+  final ConfigDescriptionParameter operation=ConfigDescriptionParameterBuilder.create(CONFIG_OPERATION,Type.TEXT).withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Heating/Cooling").withDescription("Indicates Heating or Cooling is set.").build();
+  configDescriptions.add(device);
+  configDescriptions.add(result);
+  configDescriptions.add(temperature);
+  configDescriptions.add(operation);
+  Set<String> tags=new HashSet<String>();
+  tags.add("AirConditioner");
+  tags.add("LivingRoom");
+  return new AirConditionerRuleTemplate(tags,triggers,conditions,actions,configDescriptions);
+}

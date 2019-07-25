@@ -1,0 +1,9 @@
+private List<SAbstractConcept> parameter(final SNode node,final EditorContext editorContext){
+  List<SAbstractConcept> list=ListSequence.fromListAndArray(new ArrayList<SAbstractConcept>(),MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0xf8cc56b217L,"jetbrains.mps.baseLanguage.structure.IfStatement"),MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0xfaa4bf0f2fL,"jetbrains.mps.baseLanguage.structure.WhileStatement"),MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x11232674988L,"jetbrains.mps.baseLanguage.structure.DoWhileStatement"),MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x10a698082feL,"jetbrains.mps.baseLanguage.structure.ForStatement"),MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x10a6933ce33L,"jetbrains.mps.baseLanguage.structure.ForeachStatement"),MetaAdapterFactory.getConcept(0x8388864671ce4f1cL,0x9c53c54016f6ad4fL,0x10cac65f399L,"jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"));
+  ListSequence.fromList(list).removeElement(SNodeOperations.getConcept(node));
+  if (SNodeOperations.isInstanceOf(node,MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x10a6933ce33L,"jetbrains.mps.baseLanguage.structure.ForeachStatement")) || SNodeOperations.isInstanceOf(node,MetaAdapterFactory.getConcept(0x8388864671ce4f1cL,0x9c53c54016f6ad4fL,0x10cac65f399L,"jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"))) {
+    ListSequence.fromList(list).removeElement(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x10a6933ce33L,"jetbrains.mps.baseLanguage.structure.ForeachStatement"));
+    ListSequence.fromList(list).removeElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL,0x9c53c54016f6ad4fL,0x10cac65f399L,"jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"));
+  }
+  return list;
+}

@@ -1,0 +1,61 @@
+package com.fisher.gen.controller;
+
+
+import com.fisher.common.annotation.SysLog;
+import com.fisher.common.constants.FisherServiceNameConstants;
+import com.fisher.common.util.ApiResult;
+import com.fisher.gen.model.dto.BuildConfigDTO;
+import com.fisher.gen.model.query.TableInfoQuery;
+import com.fisher.gen.service.SysGenService;
+import com.fisher.gen.service.TableInfoService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+
+@Controller
+//@RequestMapping("/gen")
+@Api(value = "ä»£ç ?ç”Ÿæˆ?controller", tags = {"ä»£ç ?ç”Ÿæˆ?æŽ¥å?£ç®¡ç?†"})
+public class SysGenController {
+
+    private static final String MODULE_NAME = "ä»£ç ?ç”Ÿæˆ?æ¨¡å?—";
+
+
+    @Autowired
+    private TableInfoService tableInfoService;
+
+    @Autowired
+    private SysGenService sysGenService;
+
+    @SysLog(serviceId = FisherServiceNameConstants.FISHER_GEN_SERVICE, moduleName = MODULE_NAME, actionName = "åˆ†é¡µæŸ¥è¯¢æ•°æ?®åº“ä¸­æ‰€æœ‰çš„è¡¨ä¿¡æ?¯")
+    @ApiOperation(value = "åˆ†é¡µæŸ¥è¯¢æ•°æ?®åº“ä¸­æ‰€æœ‰çš„è¡¨ä¿¡æ?¯", notes = "åˆ†é¡µæŸ¥è¯¢æ•°æ?®åº“ä¸­æ‰€æœ‰çš„è¡¨ä¿¡æ?¯", httpMethod = "GET")
+    @ApiImplicitParam(name = "query", value = "è¡¨ä¿¡æ?¯æŸ¥è¯¢æ?¡ä»¶", required = false, dataType = "TableInfoQuery")
+    @ResponseBody
+    @GetMapping("/code/page")
+    public ApiResult<TableInfoQuery> page(TableInfoQuery query){
+        return new ApiResult<>(tableInfoService.pageByQuery(query));
+    }
+
+
+    @SysLog(serviceId = FisherServiceNameConstants.FISHER_GEN_SERVICE, moduleName = MODULE_NAME, actionName = "æ ¹æ?®è¡¨å??ç§°ç”Ÿæˆ?ä»£ç ?  è¿”å›žzipåŒ…")
+    @ApiOperation(value = "æ ¹æ?®è¡¨å??ç§°ç”Ÿæˆ?ä»£ç ?", notes = "æ ¹æ?®è¡¨å??ç§°ç”Ÿæˆ?ä»£ç ?  è¿”å›žzipåŒ…", httpMethod = "POST")
+    @ApiImplicitParam(name = "buildConfigDTO", value = "è¡¨é…?ç½®", required = true, dataType = "BuildConfigDTO")
+    @PostMapping("/code/build")
+    public void code(@RequestBody BuildConfigDTO buildConfigDTO, HttpServletResponse response) throws IOException {
+
+        byte[] data = sysGenService.genCodeByTableName(buildConfigDTO);
+        response.reset();
+        response.setHeader("Content-Disposition", "attachment; filename=\"code.zip\"");
+        response.addHeader("Content-Length", "" + data.length);
+        response.setContentType("application/octet-stream; charset=UTF-8");
+        IOUtils.write(data, response.getOutputStream());
+    }
+
+}

@@ -1,0 +1,25 @@
+@Override public boolean navigate(final String projectPath,final String fileName,final int startLine,final int startPosition,final int endLine,final int endPosition){
+  final boolean[] result=new boolean[]{false};
+  Runnable runnable=new Runnable(){
+    @Override public void run(){
+      try {
+        IProjectHandler handler=MPSPlugin.getInstance().getProjectHandler(projectPath);
+        if (handler != null) {
+          handler.open(fileName,startLine,startPosition,endLine,endPosition);
+          result[0]=true;
+        }
+      }
+ catch (      RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+;
+  if (ThreadUtils.isInEDT()) {
+    ApplicationManager.getApplication().executeOnPooledThread(runnable);
+  }
+ else {
+    runnable.run();
+  }
+  return result[0];
+}

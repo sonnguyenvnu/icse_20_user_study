@@ -1,0 +1,40 @@
+/** 
+ * ???????
+ */
+private void reset(){
+  drawFacePoints=false;
+  showFps=false;
+  aspectRatio=AspectRatio.Ratio_16_9;
+  currentRatio=Ratio_16_9;
+  expectFps=DESIRED_PREVIEW_FPS;
+  previewFps=0;
+  expectWidth=DEFAULT_16_9_WIDTH;
+  expectHeight=DEFAULT_16_9_HEIGHT;
+  previewWidth=0;
+  previewHeight=0;
+  highDefinition=false;
+  orientation=0;
+  backCamera=false;
+  cameraId=Camera.CameraInfo.CAMERA_FACING_FRONT;
+  supportFlash=false;
+  focusWeight=1000;
+  recordable=true;
+  recordTime=DEFAULT_RECORD_TIME;
+  audioPermitted=false;
+  recordAudio=true;
+  touchTake=false;
+  takeDelay=false;
+  luminousEnhancement=false;
+  brightness=-1;
+  mGalleryType=GalleryType.PICTURE;
+  gallerySelectedListener=null;
+  captureListener=null;
+  cameraCallback=null;
+  captureCallback=null;
+  fpsCallback=null;
+  showCompare=false;
+  isTakePicture=false;
+  enableDepthBlur=false;
+  enableVignette=false;
+  beauty=new BeautyParam();
+}

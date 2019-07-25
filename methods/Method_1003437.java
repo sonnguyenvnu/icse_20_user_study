@@ -1,0 +1,9 @@
+/** 
+ * This method is called when executing this application from the command line.
+ * @param args the command line parameters
+ */
+public static void main(String... args) throws Exception {
+  String password=CipherFactory.KEYSTORE_PASSWORD;
+  KeyStore store=CipherFactory.getKeyStore(password);
+  printKeystore(store,password);
+}

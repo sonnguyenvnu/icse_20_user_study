@@ -1,0 +1,3 @@
+private void deinit(){
+  deinitSensors();
+}

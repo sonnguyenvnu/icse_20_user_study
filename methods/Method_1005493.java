@@ -1,0 +1,3 @@
+String resolve(){
+  return value;
+}

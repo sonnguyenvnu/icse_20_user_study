@@ -1,0 +1,30 @@
+private void init(Context context,AttributeSet attrs,int defStyleAttr,int completeLayout,int errorLayout,int loadingLayout,int customLayout){
+  mCurrentStatus=Status.NONE;
+  mSlideIn=AnimationUtils.loadAnimation(context,R.anim.sv_slide_in);
+  mSlideOut=AnimationUtils.loadAnimation(context,R.anim.sv_slide_out);
+  LayoutInflater inflate=LayoutInflater.from(context);
+  mHandler=new Handler();
+  TypedArray a=context.obtainStyledAttributes(attrs,R.styleable.StatusView,defStyleAttr,0);
+  int completeLayoutId=a.getResourceId(R.styleable.StatusView_sv_complete,0);
+  int errorLayoutId=a.getResourceId(R.styleable.StatusView_sv_error,0);
+  int loadingLayoutId=a.getResourceId(R.styleable.StatusView_sv_loading,0);
+  int customLayoutId=a.getResourceId(R.styleable.StatusView_sv_custom,0);
+  mHideOnComplete=a.getBoolean(R.styleable.StatusView_sv_dismissOnComplete,mHideOnComplete);
+  mCompleteView=inflate.inflate(completeLayout != 0 ? completeLayout : completeLayoutId,null);
+  mErrorView=inflate.inflate(errorLayout != 0 ? errorLayout : errorLayoutId,null);
+  mLoadingView=inflate.inflate(loadingLayout != 0 ? loadingLayout : loadingLayoutId,null);
+  mCustomView=inflate.inflate(customLayout != 0 ? customLayout : customLayoutId,null);
+  mCompleteView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+  mErrorView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+  mLoadingView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+  mCustomView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+  addView(mCompleteView);
+  addView(mErrorView);
+  addView(mLoadingView);
+  addView(mCustomView);
+  mCompleteView.setVisibility(View.INVISIBLE);
+  mErrorView.setVisibility(View.INVISIBLE);
+  mLoadingView.setVisibility(View.INVISIBLE);
+  mCustomView.setVisibility(View.INVISIBLE);
+  a.recycle();
+}

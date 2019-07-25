@@ -1,0 +1,40 @@
+/** 
+ * reset this object so it can go back to pool
+ */
+public void reset(){
+  this.isStartOfJob=false;
+  this.isFinalJobEvent=false;
+  this.startTime=null;
+  this.eventId=null;
+  this.eventTime=null;
+  this.eventDuration=null;
+  this.eventType=null;
+  this.flowFileUuid=null;
+  this.fileSize=null;
+  this.fileSizeBytes=null;
+  this.clusterNodeId=null;
+  this.clusterNodeAddress=null;
+  this.groupId=null;
+  this.componentId=null;
+  this.componentType=null;
+  this.componentName=null;
+  this.parentUuids=null;
+  this.childUuids=null;
+  this.details=null;
+  this.sourceConnectionIdentifier=null;
+  this.inputContentClaimFileSizeBytes=null;
+  this.inputContentClaimFileSize=null;
+  this.outputContentClaimFileSizeBytes=null;
+  this.outputContentClaimFileSize=null;
+  this.relatedRootFlowFiles=null;
+  this.isFailure=false;
+  this.jobFlowFileId=null;
+  this.feedName=null;
+  this.feedProcessGroupId=null;
+  this.relationship=null;
+  this.updatedAttributes=null;
+  this.previousAttributes=null;
+  this.additionalProperties=null;
+  this.attributeMap=null;
+  this.firstEventProcessorId=null;
+}

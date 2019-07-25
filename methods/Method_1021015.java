@@ -1,0 +1,6 @@
+/** 
+ * ?? key ?????????
+ */
+public String type(Object key){
+  return jedisCluster.type(keyToBytes(key));
+}

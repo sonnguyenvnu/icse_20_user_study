@@ -1,0 +1,26 @@
+@Override public void load(Map<String,String> options){
+  setLogMessageFormat(options.get(LOG_MESSAGE_FORMAT));
+  setLogfile(options.get(LOGFILE));
+  setAppend(options.get(APPEND));
+  setDateformat(options.get(DATEFORMAT));
+  setAppender(options.get(APPENDER));
+  setModulelist(options.get(MODULELIST));
+  setDriverlist(options.get(DRIVERLIST));
+  setStackTrace(options.get(STACKTRACE));
+  setStackTraceClass(options.get(STACKTRACECLASS));
+  setAutoflush(options.get(AUTOFLUSH));
+  setReloadProperties(options.get(RELOADPROPERTIES));
+  setReloadPropertiesInterval(options.get(RELOADPROPERTIESINTERVAL));
+  setJNDIContextFactory(options.get(JNDICONTEXTFACTORY));
+  setJNDIContextProviderURL(options.get(JNDICONTEXTPROVIDERURL));
+  setJNDIContextCustom(options.get(JNDICONTEXTCUSTOM));
+  setRealDataSource(options.get(REALDATASOURCE));
+  setRealDataSourceClass(options.get(REALDATASOURCECLASS));
+  setRealDataSourceProperties(options.get(REALDATASOURCEPROPERTIES));
+  setDatabaseDialectDateFormat(options.get(DATABASE_DIALECT_DATE_FORMAT));
+  setDatabaseDialectTimestampFormat(options.get(DATABASE_DIALECT_TIMESTAMP_FORMAT));
+  setDatabaseDialectBooleanFormat(options.get(DATABASE_DIALECT_BOOLEAN_FORMAT));
+  setCustomLogMessageFormat(options.get(CUSTOM_LOG_MESSAGE_FORMAT));
+  setJmx(options.get(JMX));
+  setJmxPrefix(options.get(JMX_PREFIX));
+}

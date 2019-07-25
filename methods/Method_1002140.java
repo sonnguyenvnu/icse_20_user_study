@@ -1,0 +1,3 @@
+ClearableVectorLayer drawables(){
+  return drawables;
+}

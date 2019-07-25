@@ -1,0 +1,5 @@
+public void build(final DataFlowBuilderContext _context){
+  for (  SNode expression : ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(),MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0x113e4952f12L,0x113e4b36742L,"dimensionExpression")))) {
+    _context.getBuilder().build((SNode)expression);
+  }
+}

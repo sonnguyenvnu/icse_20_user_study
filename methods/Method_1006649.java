@@ -1,0 +1,3 @@
+@Override public void update(User entity) throws ServiceException {
+  throw new ServiceException("Not implemented");
+}

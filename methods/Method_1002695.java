@@ -1,0 +1,3 @@
+HttpRequest unwrap(){
+  return delegate;
+}

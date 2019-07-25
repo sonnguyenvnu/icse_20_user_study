@@ -1,0 +1,3 @@
+void reset(){
+  triggered=false;
+}

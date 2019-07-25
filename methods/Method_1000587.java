@@ -1,0 +1,6 @@
+/** 
+ * ????, ??MessageDigest?????
+ */
+public String digest(){
+  return Lang.fixedHexString(md.digest());
+}

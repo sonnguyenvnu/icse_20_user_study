@@ -1,0 +1,38 @@
+@Override public void init(EasyRandomParameters parameters){
+  long seed=parameters.getSeed();
+  Charset charset=parameters.getCharset();
+  randomizers.put(String.class,new StringRandomizer(charset,parameters.getStringLengthRange().getMin(),parameters.getStringLengthRange().getMax(),seed));
+  CharacterRandomizer characterRandomizer=new CharacterRandomizer(charset,seed);
+  randomizers.put(Character.class,characterRandomizer);
+  randomizers.put(char.class,characterRandomizer);
+  randomizers.put(Boolean.class,new BooleanRandomizer(seed));
+  randomizers.put(boolean.class,new BooleanRandomizer(seed));
+  randomizers.put(Byte.class,new ByteRandomizer(seed));
+  randomizers.put(byte.class,new ByteRandomizer(seed));
+  randomizers.put(Short.class,new ShortRandomizer(seed));
+  randomizers.put(short.class,new ShortRandomizer(seed));
+  randomizers.put(Integer.class,new IntegerRandomizer(seed));
+  randomizers.put(int.class,new IntegerRandomizer(seed));
+  randomizers.put(Long.class,new LongRandomizer(seed));
+  randomizers.put(long.class,new LongRandomizer(seed));
+  randomizers.put(Double.class,new DoubleRandomizer(seed));
+  randomizers.put(double.class,new DoubleRandomizer(seed));
+  randomizers.put(Float.class,new FloatRandomizer(seed));
+  randomizers.put(float.class,new FloatRandomizer(seed));
+  randomizers.put(BigInteger.class,new BigIntegerRandomizer(seed));
+  randomizers.put(BigDecimal.class,new BigDecimalRandomizer(seed));
+  randomizers.put(AtomicLong.class,new AtomicLongRandomizer(seed));
+  randomizers.put(AtomicInteger.class,new AtomicIntegerRandomizer(seed));
+  Date minDate=valueOf(parameters.getDateRange().getMin());
+  Date maxDate=valueOf(parameters.getDateRange().getMax());
+  randomizers.put(Date.class,new DateRangeRandomizer(minDate,maxDate,seed));
+  randomizers.put(java.sql.Date.class,new SqlDateRangeRandomizer(new java.sql.Date(minDate.getTime()),new java.sql.Date(maxDate.getTime()),seed));
+  randomizers.put(java.sql.Time.class,new SqlTimeRandomizer(seed));
+  randomizers.put(java.sql.Timestamp.class,new SqlTimestampRandomizer(seed));
+  randomizers.put(Calendar.class,new CalendarRandomizer(seed));
+  randomizers.put(URL.class,new UrlRandomizer(seed));
+  randomizers.put(URI.class,new UriRandomizer(seed));
+  randomizers.put(Locale.class,new LocaleRandomizer(seed));
+  randomizers.put(UUID.class,new UUIDRandomizer(seed));
+  randomizers.put(Class.class,new SkipRandomizer());
+}

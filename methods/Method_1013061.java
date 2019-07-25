@@ -1,0 +1,3 @@
+public static List<Field> parameters(){
+  return ImmutableList.of(new StringField("name",true),new StringField("in",true),new StringField("description"),new StringField("required"),new ObjectField("schema"),new StringField("type"),new StringField("format"),new StringField("allowEmptyValue"),new ParameterItemsField(),new StringField("collectionFormat"),new StringField("default"),new StringField("maximum"),new StringField("exclusiveMaximum"),new StringField("minimum"),new StringField("exclusiveMinimum"),new StringField("maxLength"),new StringField("minLength"),new StringField("pattern"),new StringField("maxItems"),new StringField("minItems"),new StringField("uniqueItems"),new ArrayField("enum"),new StringField("multipleOf"));
+}

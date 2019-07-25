@@ -1,0 +1,3 @@
+public boolean accepts(Class<?> aClass){
+  return aClass.isPrimitive() || Number.class.isAssignableFrom(aClass) || String.class.equals(aClass) || Character.class.equals(aClass) || Boolean.class.equals(aClass) || java.util.Date.class.isAssignableFrom(aClass) || java.util.Calendar.class.isAssignableFrom(aClass) || aClass.isEnum() || LocalDateTime.class.isAssignableFrom(aClass) || LocalDate.class.isAssignableFrom(aClass) || LocalTime.class.isAssignableFrom(aClass) || OffsetDateTime.class.isAssignableFrom(aClass) || OffsetTime.class.isAssignableFrom(aClass) || ZonedDateTime.class.isAssignableFrom(aClass) || Instant.class.isAssignableFrom(aClass);
+}

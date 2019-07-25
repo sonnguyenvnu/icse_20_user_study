@@ -1,0 +1,3 @@
+@Override public List<ParameterSpecification> options(){
+  return ImmutableList.of(parameter("configure","If set, will cause the instance to be automatically " + "configured"),parameter("project","Bigtable project to use","<project>"),parameter("instance","Bigtable instance to use","<instance>"),parameter("credentials","Credentials implementation to use, must be one of:" + " default, compute-engine, json, service-account","<credentials>"),parameter("json","Json file to use when using json credentials","<file>"),parameter("serviceAccount","Service account to use when using " + "service-account credentials","<account>"),parameter("keyFile","Key file to use when using service-account " + "credentials","<file>"));
+}

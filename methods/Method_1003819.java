@@ -1,0 +1,6 @@
+/** 
+ * Registers an  {@link Hooks#onOperatorError(BiFunction)} with Reactor that provides a default error handling strategy of forwarding exceptions to the execution error handler.<p> This method is idempotent. It only needs to be called once per JVM, regardless of how many Ratpack applications are running within the JVM. <p> For a Java application, a convenient place to call this is in the handler factory implementation. <pre class="java"> {@code import ratpack.error.ServerErrorHandler; import ratpack.reactor.ReactorRatpack; import ratpack.test.embed.EmbeddedApp; import rx.Observable; import static org.junit.Assert.assertEquals; <p>}public class Example  public static void main(String... args) throws Exception { ReactorRatpack.initialize(); // must be called once for the life of the JVM <p> EmbeddedApp.fromHandlers(chain -> chain .register(s -> s .add(ServerErrorHandler.class, (ctx, throwable) -> ctx.render("caught by error handler: " + throwable.getMessage()) ) ) .get(ctx -> Observable.<String>error(new Exception("!")).subscribe(ctx::render)) ).test(httpClient -> assertEquals("caught by error handler: !", httpClient.getText()) ); } } }</pre>
+ */
+@SuppressWarnings("unchecked") public static void initialize(){
+  Hooks.onOperatorError(new ErrorHandler());
+}

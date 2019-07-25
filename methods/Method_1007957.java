@@ -1,0 +1,9 @@
+@JsonCreator static NetworkSettings create(@JsonProperty("IPAddress") final String ipAddress,@JsonProperty("IPPrefixLen") final Integer ipPrefixLen,@JsonProperty("Gateway") final String gateway,@JsonProperty("Bridge") final String bridge,@JsonProperty("PortMapping") final Map<String,Map<String,String>> portMapping,@JsonProperty("Ports") final Map<String,List<PortBinding>> ports,@JsonProperty("MacAddress") final String macAddress,@JsonProperty("Networks") final Map<String,AttachedNetwork> networks,@JsonProperty("EndpointID") final String endpointId,@JsonProperty("SandboxID") final String sandboxId,@JsonProperty("SandboxKey") final String sandboxKey,@JsonProperty("HairpinMode") final Boolean hairpinMode,@JsonProperty("LinkLocalIPv6Address") final String linkLocalIPv6Address,@JsonProperty("LinkLocalIPv6PrefixLen") final Integer linkLocalIPv6PrefixLen,@JsonProperty("GlobalIPv6Address") final String globalIPv6Address,@JsonProperty("GlobalIPv6PrefixLen") final Integer globalIPv6PrefixLen,@JsonProperty("IPv6Gateway") final String ipv6Gateway){
+  final ImmutableMap.Builder<String,List<PortBinding>> portsCopy=ImmutableMap.builder();
+  if (ports != null) {
+    for (    final Map.Entry<String,List<PortBinding>> entry : ports.entrySet()) {
+      portsCopy.put(entry.getKey(),entry.getValue() == null ? Collections.<PortBinding>emptyList() : entry.getValue());
+    }
+  }
+  return builder().ipAddress(ipAddress).ipPrefixLen(ipPrefixLen).gateway(gateway).bridge(bridge).portMapping(portMapping).ports(portsCopy.build()).macAddress(macAddress).networks(networks).endpointId(endpointId).sandboxId(sandboxId).sandboxKey(sandboxKey).hairpinMode(hairpinMode).linkLocalIPv6Address(linkLocalIPv6Address).linkLocalIPv6PrefixLen(linkLocalIPv6PrefixLen).globalIPv6Address(globalIPv6Address).globalIPv6PrefixLen(globalIPv6PrefixLen).ipv6Gateway(ipv6Gateway).build();
+}

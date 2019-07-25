@@ -1,0 +1,98 @@
+package net.gotev.uploadservicedemo;
+
+import android.content.Intent;
+import android.os.Bundle;
+import androidx.annotation.Nullable;
+import android.view.View;
+import android.widget.Toast;
+
+import net.gotev.recycleradapter.AdapterItem;
+import net.gotev.uploadservice.BinaryUploadRequest;
+import net.gotev.uploadservicedemo.adapteritems.EmptyItem;
+import net.gotev.uploadservicedemo.adapteritems.UploadItem;
+import net.gotev.uploadservicedemo.utils.UploadItemUtils;
+
+import java.io.IOException;
+import java.util.UUID;
+
+/**
+ * @author Aleksandar Gotev
+ */
+
+public class BinaryUploadActivity extends UploadActivity {
+
+    public static void show(BaseActivity activity) {
+        activity.startActivity(new Intent(activity, BinaryUploadActivity.class));
+    }
+
+    @Override
+    public AdapterItem getEmptyItem() {
+        return new EmptyItem(R.string.empty_binary_upload);
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        addParameter.setVisibility(View.GONE);
+        addFile.setTitleText(getString(R.string.set_file));
+    }
+
+    @Override
+    public void onAddFile() {
+        fileParameterName = "file";
+        openFilePicker(false);
+    }
+
+    @Override
+    public void onDone(String httpMethod, String serverUrl, UploadItemUtils uploadItemUtils) {
+
+        try {
+            final String uploadId = UUID.randomUUID().toString();
+
+            final BinaryUploadRequest request = new BinaryUploadRequest(this, uploadId, serverUrl)
+                    .setMethod(httpMethod)
+                    .setNotificationConfig(getNotificationConfig(uploadId, R.string.binary_upload))
+                    //.setCustomUserAgent(getUserAgent())
+                    .setMaxRetries(MAX_RETRIES)
+                    .setUsesFixedLengthStreamingMode(FIXED_LENGTH_STREAMING_MODE);
+
+
+            uploadItemUtils.forEach(new UploadItemUtils.ForEachDelegate() {
+
+                @Override
+                public void onHeader(UploadItem item) {
+                    request.addHeader(item.getTitle(), item.getSubtitle());
+                }
+
+                @Override
+                public void onParameter(UploadItem item) {
+                    // Binary uploads does not support parameters
+                }
+
+                @Override
+                public void onFile(UploadItem item) {
+                    try {
+                        request.setFileToUpload(item.getSubtitle());
+                    } catch (IOException exc) {
+                        Toast.makeText(BinaryUploadActivity.this,
+                                getString(R.string.file_not_found, item.getSubtitle()),
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
+
+            });
+
+            request.startUpload();
+            finish();
+
+        } catch (Exception exc) {
+            Toast.makeText(this, exc.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void onInfo() {
+        openBrowser("https://github.com/gotev/android-upload-service/wiki/Recipes#http-binary-upload-");
+    }
+}

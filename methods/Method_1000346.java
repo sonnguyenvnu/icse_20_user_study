@@ -1,0 +1,6 @@
+/** 
+ * ??????????
+ */
+public static SimpleCriteria cri(){
+  return new SimpleCriteria();
+}

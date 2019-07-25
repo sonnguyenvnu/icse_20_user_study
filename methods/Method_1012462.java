@@ -1,0 +1,3 @@
+void reset(){
+  timeOffset=startPosition;
+}

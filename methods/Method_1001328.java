@@ -1,0 +1,31 @@
+public static Object sameedge(Object... arg){
+  UNSUPPORTED("4pviw1spiyvhdz8yvl4ho6qkx");
+  UNSUPPORTED("bz7wamuuo5855unp564487v13");
+  UNSUPPORTED("erg9i1970wdri39osu8hx2a6e");
+  UNSUPPORTED("ddmbnep3k060w2rgslisky5vw");
+  UNSUPPORTED("4yhtj0buzrukmv0lwrz77s5oa");
+  UNSUPPORTED("6htdinsa3h8aamp1e6pvd6ig5");
+  UNSUPPORTED("bqrcn2qjykhnd6fuwneng85h");
+  UNSUPPORTED("g5anfkdhikcxt42clvstq6hm");
+  UNSUPPORTED("flupwh3kosf3fkhkxllllt1");
+  UNSUPPORTED("8ac5s7v71vxuj2d2r4t989b1c");
+  UNSUPPORTED("c29filv0jivh50blpbuqjk5ib");
+  UNSUPPORTED("3uf43hfdusyzm1vp3dq12qu29");
+  UNSUPPORTED("ciwytw61x3j4anugbarxaa7m");
+  UNSUPPORTED("3lrnrroeosc48ilq0azgtzyna");
+  UNSUPPORTED("dvgyxsnyeqqnyzq696k3vskib");
+  UNSUPPORTED("36d7os443e3k5gf7g7zvi3vfs");
+  UNSUPPORTED("3s0n702bprlxue4xtghqv3nad");
+  UNSUPPORTED("cwxcw0cnsxpwkd7l94pmw1dfg");
+  UNSUPPORTED("4y2b9aw2a57zud1ncpiw2fihn");
+  UNSUPPORTED("2lemlhm6qdqemg83e6xwyzd01");
+  UNSUPPORTED("3k68ve2sycumnr4ncfzymgyli");
+  UNSUPPORTED("4028w60fcyzgcb6qh4kf8090j");
+  UNSUPPORTED("1rkfoax4tin2ccbtpc8w1tnpv");
+  UNSUPPORTED("bhh3lvo0knve8fiod7js8o8oy");
+  UNSUPPORTED("b7yh5042d5o8u6iso9bm39glf");
+  UNSUPPORTED("5r1jxkep2wvpcpjz1e6n0dxo7");
+  UNSUPPORTED("59a2z18u4tje6r407a6psdqy8");
+  UNSUPPORTED("c24nfmv9i7o5eoqaymbibp7m7");
+  throw new UnsupportedOperationException();
+}

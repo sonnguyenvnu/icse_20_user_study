@@ -1,0 +1,8 @@
+/** 
+ * ???? StringBuilder ?????????
+ * @param sb StringBuilder ??
+ * @return ?????
+ */
+public static StringOutputStream ops(StringBuilder sb){
+  return new StringOutputStream(sb);
+}

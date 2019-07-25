@@ -1,0 +1,9 @@
+public void execute(SNode node){
+  SNode conceptDeclaration=SNodeOperations.cast(node,MetaAdapterFactory.getConcept(0xc72da2b97cce4447L,0x8389f407dc1158b7L,0xf979ba0450L,"jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+  if (AttributeDesignTimeOperations.isAttributeDeclaration(conceptDeclaration) && (AttributeOperations.getAttribute(conceptDeclaration,new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L,0x8389f407dc1158b7L,0x29889a701b928195L,"jetbrains.mps.lang.structure.structure.AttributeInfo"))) == null)) {
+    AttributeOperations.setAttribute(SNodeOperations.cast(node,MetaAdapterFactory.getConcept(0xc72da2b97cce4447L,0x8389f407dc1158b7L,0xf979ba0450L,"jetbrains.mps.lang.structure.structure.ConceptDeclaration")),new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L,0x8389f407dc1158b7L,0x29889a701b928195L,"jetbrains.mps.lang.structure.structure.AttributeInfo")),SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L,0x8389f407dc1158b7L,0x29889a701b928195L,"jetbrains.mps.lang.structure.structure.AttributeInfo")));
+  }
+  if (!(AttributeDesignTimeOperations.isAttributeDeclaration(conceptDeclaration)) && (AttributeOperations.getAttribute(conceptDeclaration,new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L,0x8389f407dc1158b7L,0x29889a701b928195L,"jetbrains.mps.lang.structure.structure.AttributeInfo"))) != null)) {
+    SNodeOperations.deleteNode(AttributeOperations.getAttribute(SNodeOperations.cast(node,MetaAdapterFactory.getConcept(0xc72da2b97cce4447L,0x8389f407dc1158b7L,0xf979ba0450L,"jetbrains.mps.lang.structure.structure.ConceptDeclaration")),new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L,0x8389f407dc1158b7L,0x29889a701b928195L,"jetbrains.mps.lang.structure.structure.AttributeInfo"))));
+  }
+}

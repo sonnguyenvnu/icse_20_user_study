@@ -1,0 +1,62 @@
+/** 
+ * Creates the byte array for the dex file. 
+ */
+public static byte[] create(String childClz,String superClz) throws IOException {
+  boolean childFirst=childClz.compareTo(superClz) < 0;
+  byte[] childBytes=stringToBytes("L" + childClz.replace('.','/') + ";");
+  byte[] superBytes=stringToBytes("L" + superClz.replace('.','/') + ";");
+  int stringsSize=childBytes.length + superBytes.length;
+  int padding=-stringsSize & 3;
+  stringsSize+=padding;
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  out.write("dex\n035\0".getBytes());
+  out.write(new byte[24]);
+  writeInt(out,0xfc + stringsSize);
+  writeInt(out,0x70);
+  writeInt(out,0x12345678);
+  writeInt(out,0);
+  writeInt(out,0);
+  writeInt(out,0xa4 + stringsSize);
+  writeInt(out,2);
+  writeInt(out,0x70);
+  writeInt(out,2);
+  writeInt(out,0x78);
+  writeInt(out,0);
+  writeInt(out,0);
+  writeInt(out,0);
+  writeInt(out,0);
+  writeInt(out,0);
+  writeInt(out,0);
+  writeInt(out,1);
+  writeInt(out,0x80);
+  writeInt(out,0x5c + stringsSize);
+  writeInt(out,0xa0);
+  writeInt(out,0xa0);
+  writeInt(out,0xa0 + (childFirst ? childBytes.length : superBytes.length));
+  writeInt(out,0);
+  writeInt(out,1);
+  writeInt(out,childFirst ? 0 : 1);
+  writeInt(out,1);
+  writeInt(out,childFirst ? 1 : 0);
+  writeInt(out,0);
+  writeInt(out,-1);
+  writeInt(out,0);
+  writeInt(out,0);
+  writeInt(out,0);
+  out.write(childFirst ? childBytes : superBytes);
+  out.write(childFirst ? superBytes : childBytes);
+  out.write(new byte[padding]);
+  writeInt(out,0);
+  writeInt(out,7);
+  writeMapItem(out,0,1,0);
+  writeMapItem(out,1,2,0x70);
+  writeMapItem(out,2,2,0x78);
+  writeMapItem(out,6,1,0x80);
+  writeMapItem(out,0x2002,2,0xa0);
+  writeMapItem(out,0x1003,1,0xa0 + stringsSize);
+  writeMapItem(out,0x1000,1,0xa4 + stringsSize);
+  byte[] buf=out.toByteArray();
+  updateSignature(buf);
+  updateChecksum(buf);
+  return buf;
+}

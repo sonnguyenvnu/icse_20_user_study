@@ -1,0 +1,5 @@
+public void execute(SNode node){
+  SNode parens=SNodeFactoryOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0xfb4ed32b7fL,"jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"),null);
+  SLinkOperations.setTarget(parens,MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0xfb4ed32b7fL,0xfb4ed32b80L,"expression"),SLinkOperations.getTarget(SNodeOperations.cast(node,MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0xfbcf6bd10dL,"jetbrains.mps.baseLanguage.structure.NotExpression")),MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0xfbcf6bd10dL,0xfbcf6c30a4L,"expression")));
+  SLinkOperations.setTarget(SNodeOperations.cast(node,MetaAdapterFactory.getConcept(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0xfbcf6bd10dL,"jetbrains.mps.baseLanguage.structure.NotExpression")),MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L,0xa443f952ceaf5816L,0xfbcf6bd10dL,0xfbcf6c30a4L,"expression"),parens);
+}

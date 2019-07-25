@@ -1,0 +1,10 @@
+/** 
+ * ??????? POJO ???????
+ * @param type POJO ??
+ * @param ignoreNull ???? NULL ???
+ * @return ??
+ */
+public FieldFilter set(Class<?> type,boolean ignoreNull){
+  map.put(type,FieldMatcher.make(null,null,ignoreNull));
+  return this;
+}
